@@ -5,6 +5,7 @@
 #ifndef PROJETO_CMDAPAGARESTADOJARDIM_H
 #define PROJETO_CMDAPAGARESTADOJARDIM_H
 #include "../Comando.h"
+#include <string>
 
 
 class cmdApagarEstadoJardim : public Comando {
