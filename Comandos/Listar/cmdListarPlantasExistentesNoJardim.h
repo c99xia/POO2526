@@ -8,7 +8,11 @@
 
 
 class cmdListarPlantasExistentesNoJardim : public Comando {
+public:
+    cmdListarPlantasExistentesNoJardim();
 
+public:
+    void executa(Simulador &simulador) override;
 };
 
 

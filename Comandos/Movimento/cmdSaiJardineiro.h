@@ -7,7 +7,11 @@
 #include "../Comando.h"
 
 
-class cmdSaiJardineiro : public Comando{
+class cmdSaiJardineiro : public Comando {
+public:
+    cmdSaiJardineiro();
+
+    void executa(Simulador &simulador) override;
 };
 
 

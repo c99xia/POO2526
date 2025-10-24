@@ -5,10 +5,14 @@
 #ifndef PROJETO_CMDENTRAJARDINEIRO_H
 #define PROJETO_CMDENTRAJARDINEIRO_H
 #include "../Comando.h"
-#include "../../Jogo/Jardineiro.h"
 
+class cmdEntraJardineiro : public Comando {
+    char linha, coluna;
 
-class cmdEntraJardineiro : public Comando{
+public:
+    cmdEntraJardineiro(char linha, char coluna);
+
+    void executa(Simulador &simulador) override;
 };
 
 

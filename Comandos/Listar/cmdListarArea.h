@@ -8,7 +8,10 @@
 
 
 class cmdListarArea : public Comando {
+public:
+    cmdListarArea();
 
+    void executa(Simulador &simulador) override;
 };
 
 

@@ -8,7 +8,10 @@
 
 
 class cmdListarFerramentas : public Comando {
+public:
+    cmdListarFerramentas();
 
+    void executa(Simulador &simulador) override;
 };
 
 

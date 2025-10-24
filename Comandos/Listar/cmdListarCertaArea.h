@@ -8,6 +8,13 @@
 
 
 class cmdListarCertaArea : public Comando {
+    char linha, coluna;
+    int raio;
+
+public:
+    cmdListarCertaArea(char linha, char coluna, int raio);
+
+    void executa(Simulador &simulador) override;
 };
 
 

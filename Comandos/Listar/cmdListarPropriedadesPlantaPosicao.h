@@ -8,7 +8,12 @@
 
 
 class cmdListarPropriedadesPlantaPosicao : public Comando {
+    char linha, coluna;
 
+public:
+    cmdListarPropriedadesPlantaPosicao(char linha, char coluna);
+
+    void executa(Simulador &simulador) override;
 };
 
 

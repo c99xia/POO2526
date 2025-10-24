@@ -7,7 +7,13 @@
 #include "../Comando.h"
 
 
-class cmdMoveCima : public Comando{
+class cmdMoveCima : public Comando {
+    char tecla;
+
+public:
+    cmdMoveCima(char tecla);
+
+    void executa(Simulador &simulador) override;
 };
 
 

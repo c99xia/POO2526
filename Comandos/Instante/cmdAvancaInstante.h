@@ -8,6 +8,12 @@
 
 
 class cmdAvancaInstante : public Comando {
+    int n;
+
+public:
+    cmdAvancaInstante(int n);
+
+    void executa(Simulador &simulador) override;
 };
 
 

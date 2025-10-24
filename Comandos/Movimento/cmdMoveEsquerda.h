@@ -8,6 +8,12 @@
 
 
 class cmdMoveEsquerda : public Comando {
+    char tecla;
+
+public:
+    cmdMoveEsquerda(char tecla);
+
+    void executa(Simulador &simulador) override;
 };
 
 
