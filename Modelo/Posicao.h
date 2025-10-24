@@ -4,8 +4,8 @@
 
 #ifndef PROJETO_POSICAO_H
 #define PROJETO_POSICAO_H
-#include "../Ferramentas/Ferramenta.h"
-#include "../Plantas/Planta.h"
+#include "Ferramentas/Ferramenta.h"
+#include "Plantas/Planta.h"
 
 
 class Posicao {

@@ -4,8 +4,8 @@
 
 #ifndef PROJETO_SIMULADOR_H
 #define PROJETO_SIMULADOR_H
-#include "Jardim.h"
-#include "Jardineiro.h"
+#include "../Modelo/Jardim.h"
+#include "../Modelo/Jardineiro.h"
 #include "../Interface/Interface.h"
 
 

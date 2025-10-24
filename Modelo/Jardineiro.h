@@ -6,7 +6,7 @@
 #define PROJETO_JARDINEIRO_H
 #include <vector>
 
-#include "../Ferramentas/Ferramenta.h"
+#include "Ferramentas/Ferramenta.h"
 
 
 class Jardineiro {

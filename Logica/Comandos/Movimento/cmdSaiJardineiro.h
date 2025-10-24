@@ -9,7 +9,7 @@
 
 class cmdSaiJardineiro : public Comando {
 public:
-    cmdSaiJardineiro();
+    cmdSaiJardineiro() = default;
 
     void executa(Simulador &simulador) override;
 };

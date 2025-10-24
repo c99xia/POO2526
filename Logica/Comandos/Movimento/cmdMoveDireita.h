@@ -8,10 +8,8 @@
 
 
 class cmdMoveDireita : public Comando {
-    char tecla;
-
 public:
-    cmdMoveDireita(char tecla);
+    cmdMoveDireita() = default;
 
     void executa(Simulador &simulador) override;
 };

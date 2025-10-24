@@ -2,4 +2,4 @@
 // Created by xiaro on 10/23/2025.
 //
 
-#include "Posicao.h"
+#include "../Jogo/Posicao.h"

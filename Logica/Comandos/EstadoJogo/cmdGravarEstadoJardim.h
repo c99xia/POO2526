@@ -13,7 +13,7 @@ class cmdGravarEstadoJardim : public Comando {
     std::string nome;
 
 public:
-    cmdGravarEstadoJardim(std::string nome);
+    cmdGravarEstadoJardim(const std::string& nome);
 
     void executa(Simulador &simulador) override;
 };

@@ -8,10 +8,8 @@
 
 
 class cmdMoveBaixo : public Comando {
-    char tecla;
-
 public:
-    cmdMoveBaixo(char tecla);
+    cmdMoveBaixo() = default;
 
     void executa(Simulador &simulador) override;
 };

@@ -13,7 +13,7 @@ class cmdExecutaCmdTeste : public Comando {
     std::string nome_do_ficheiro;
 
 public:
-    cmdExecutaCmdTeste(std::string nome_do_ficheiro);
+    cmdExecutaCmdTeste(const std::string& nome_do_ficheiro);
 
     void executa(Simulador &simulador) override;
 };

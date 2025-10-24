@@ -9,7 +9,7 @@ class Simulador;
 
 class Comando {
 public:
-    virtual void executa(Simulador &simulador);
+    virtual void executa(Simulador &simulador) = 0;
     virtual ~Comando() = default;
 };
 

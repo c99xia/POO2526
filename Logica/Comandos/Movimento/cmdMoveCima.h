@@ -8,10 +8,8 @@
 
 
 class cmdMoveCima : public Comando {
-    char tecla;
-
 public:
-    cmdMoveCima(char tecla);
+    cmdMoveCima() = default;
 
     void executa(Simulador &simulador) override;
 };

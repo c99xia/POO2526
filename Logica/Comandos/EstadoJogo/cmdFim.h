@@ -9,7 +9,7 @@
 
 class cmdFim : public Comando {
 public:
-    cmdFim();
+    cmdFim()=default;
 
     void executa(Simulador &simulador) override;
 };
