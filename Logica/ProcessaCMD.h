@@ -12,6 +12,7 @@ public:
     ProcessaCMD() = default;
 
     Comando *processa(std::string &inputUtilizador);
+
 };
 
 
