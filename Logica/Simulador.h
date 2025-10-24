@@ -7,6 +7,7 @@
 #include "../Modelo/Jardim.h"
 #include "../Modelo/Jardineiro.h"
 #include "../Interface/Interface.h"
+#include "ProcessaCMD.h"
 
 
 class Simulador {
@@ -14,11 +15,11 @@ class Simulador {
     Jardineiro jardineiro;
     Interface interface;
     bool jogoAtivo;
+    ProcessaCMD processaCMD;
 
     public:
     Simulador();
     void iniciarJogo();
-
 };
 
 

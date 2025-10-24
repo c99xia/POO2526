@@ -4,11 +4,14 @@
 
 #ifndef PROJETO_PROCESSACMD_H
 #define PROJETO_PROCESSACMD_H
-#include "Simulador.h"
+#include "Comandos/Comando.h"
+#include <string>
 
+class ProcessaCMD {
+public:
+    ProcessaCMD() = default;
 
-class ProcessaCMD : public Simulador{
-
+    Comando *processa(std::string &inputUtilizador);
 };
 
 
