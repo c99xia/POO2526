@@ -4,10 +4,10 @@
 
 #ifndef PROJETO_SIMULADOR_H
 #define PROJETO_SIMULADOR_H
-#include "../Modelo/Jardim.h"
-#include "../Modelo/Jardineiro.h"
+#include "Jardim.h"
+#include "Jardineiro.h"
 #include "../Interface/Interface.h"
-#include "ProcessaCMD.h"
+#include "../Comandos/ProcessaCMD.h"
 
 
 class Simulador {

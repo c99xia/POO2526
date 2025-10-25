@@ -4,7 +4,7 @@
 
 #ifndef PROJETO_PROCESSACMD_H
 #define PROJETO_PROCESSACMD_H
-#include "Comandos/Comando.h"
+#include "Comando.h"
 #include <string>
 
 class ProcessaCMD {
