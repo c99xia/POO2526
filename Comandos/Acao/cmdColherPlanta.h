@@ -4,7 +4,7 @@
 
 #ifndef PROJETO_CMDCOLHERPLANTA_H
 #define PROJETO_CMDCOLHERPLANTA_H
-#include "../Comando.h"
+#include "..\Comando.h"
 
 
 class cmdColherPlanta : public Comando {
