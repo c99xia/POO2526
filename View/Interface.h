@@ -11,7 +11,7 @@ class Jardim;
 
 class Interface {
 public:
-    void mostraJardim(const Jardim &jardim, const Jardineiro &jardineiro);
+    void mostraJardim(const std::string& jardim);
 
     std::string lerComando() const;
 

@@ -8,10 +8,10 @@
 
 
 class cmdColherPlanta : public Comando {
-    char linha, coluna;
+    int linha, coluna;
 
 public:
-    cmdColherPlanta(char linha, char coluna);
+    cmdColherPlanta(int linha, int coluna);
 
     void executa(Simulador &simulador) override;
 };

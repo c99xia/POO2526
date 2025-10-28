@@ -7,10 +7,10 @@
 #include "../Comando.h"
 
 class cmdEntraJardineiro : public Comando {
-    char linha, coluna;
+    int linha, coluna;
 
 public:
-    cmdEntraJardineiro(char linha, char coluna);
+    cmdEntraJardineiro(int linha, int coluna);
 
     void executa(Simulador &simulador) override;
 };

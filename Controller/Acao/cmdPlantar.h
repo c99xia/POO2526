@@ -7,11 +7,13 @@
 #include "../Comando.h"
 
 
-
 class cmdPlantar : public Comando {
-    char linha, coluna, tipo_planta;
-    public:
-    cmdPlantar(char linha, char coluna, char tipo_planta);
+    int linha, coluna;
+    char tipo_planta;
+
+public:
+    cmdPlantar(int linha, int coluna, char tipo_planta);
+
     void executa(Simulador &simulador) override;
 };
 
