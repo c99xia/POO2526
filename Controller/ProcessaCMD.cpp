@@ -442,6 +442,7 @@ Comando *ProcessaCMD::processa(std::string &inputUtilizador) {
         }
         std::cout << "comando incorreto" << std::endl;
     }
+    //a
 
     else if (cmd == "fim") {
         std::cout << "Comando fim" << std::endl;
