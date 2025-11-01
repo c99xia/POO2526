@@ -3,3 +3,10 @@
 //
 
 #include "cmdMoveEsquerda.h"
+void cmdMoveEsquerda::executa(Simulador &simulador) {
+
+}
+cmdMoveEsquerda::cmdMoveEsquerda() {
+
+}
+

@@ -454,4 +454,5 @@ Comando *ProcessaCMD::processa(std::string &inputUtilizador) {
         std::cout << "comando incorreto'" << std::endl;
         return nullptr;
     }
+    return nullptr;
 }

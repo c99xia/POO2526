@@ -3,3 +3,6 @@
 //
 
 #include "cmdMoveDireita.h"
+void cmdMoveDireita::executa(Simulador &simulador) {
+
+}

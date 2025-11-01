@@ -3,3 +3,11 @@
 //
 
 #include "cmdExecutaCmdTeste.h"
+void cmdExecutaCmdTeste::executa(Simulador &simulador) {
+
+}
+
+cmdExecutaCmdTeste::cmdExecutaCmdTeste(const std::string &nome_do_ficheiro) {
+
+}
+

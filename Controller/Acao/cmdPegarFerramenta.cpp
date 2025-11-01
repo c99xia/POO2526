@@ -3,3 +3,11 @@
 //
 
 #include "cmdPegarFerramenta.h"
+void cmdPegarFerramenta::executa(Simulador &simulador) {
+
+}
+
+cmdPegarFerramenta::cmdPegarFerramenta(int numeroSeria) {
+
+}
+

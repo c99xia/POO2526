@@ -3,3 +3,10 @@
 //
 
 #include "cmdComprarFerramenta.h"
+void cmdComprarFerramenta::executa(Simulador &simulador) {
+
+}
+cmdComprarFerramenta::cmdComprarFerramenta(char ferramenta) {
+
+}
+

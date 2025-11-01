@@ -3,3 +3,6 @@
 //
 
 #include "cmdSaiJardineiro.h"
+void cmdSaiJardineiro::executa(Simulador &simulador) {
+
+}

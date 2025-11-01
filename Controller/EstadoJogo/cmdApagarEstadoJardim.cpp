@@ -3,3 +3,11 @@
 //
 
 #include "cmdApagarEstadoJardim.h"
+
+void cmdApagarEstadoJardim::executa(Simulador &simulador) {
+
+}
+
+cmdApagarEstadoJardim::cmdApagarEstadoJardim(const std::string &nome) {
+
+}

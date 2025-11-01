@@ -3,3 +3,11 @@
 //
 
 #include "cmdColherPlanta.h"
+void cmdColherPlanta::executa(Simulador &simulador) {
+
+}
+
+cmdColherPlanta::cmdColherPlanta(int linha, int coluna) {
+
+}
+

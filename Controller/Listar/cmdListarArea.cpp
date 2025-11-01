@@ -3,3 +3,12 @@
 //
 
 #include "cmdListarArea.h"
+void cmdListarArea::executa(Simulador &simulador) {
+
+}
+
+cmdListarArea::cmdListarArea() {
+
+}
+
+

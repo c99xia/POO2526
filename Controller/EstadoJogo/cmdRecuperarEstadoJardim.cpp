@@ -3,3 +3,11 @@
 //
 
 #include "cmdRecuperarEstadoJardim.h"
+
+void cmdRecuperarEstadoJardim::executa(Simulador &simulador) {
+
+}
+cmdRecuperarEstadoJardim::cmdRecuperarEstadoJardim(const std::string &nome) {
+
+}
+

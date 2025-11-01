@@ -3,3 +3,11 @@
 //
 
 #include "cmdListarPropriedadesPlantaPosicao.h"
+
+void cmdListarPropriedadesPlantaPosicao::executa(Simulador &simulador) {
+
+}
+cmdListarPropriedadesPlantaPosicao::cmdListarPropriedadesPlantaPosicao(int linha, int coluna) {
+
+}
+

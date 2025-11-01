@@ -3,3 +3,10 @@
 //
 
 #include "cmdListarFerramentas.h"
+void cmdListarFerramentas::executa(Simulador &simulador) {
+
+}
+
+cmdListarFerramentas::cmdListarFerramentas() {
+
+}

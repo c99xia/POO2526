@@ -3,3 +3,11 @@
 //
 
 #include "cmdLargarFerramenta.h"
+void cmdLargarFerramenta::executa(Simulador &simulador) {
+
+}
+
+cmdLargarFerramenta::cmdLargarFerramenta() {
+
+}
+

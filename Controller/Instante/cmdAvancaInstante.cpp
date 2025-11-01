@@ -3,3 +3,12 @@
 //
 
 #include "cmdAvancaInstante.h"
+
+void cmdAvancaInstante::executa(Simulador &simulador) {
+
+}
+
+cmdAvancaInstante::cmdAvancaInstante(int n) {
+
+}
+

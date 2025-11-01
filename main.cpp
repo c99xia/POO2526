@@ -6,28 +6,28 @@
 #include "View/Interface.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-
     Simulador simulador;
     Interface interface;
-    ProcessaCMD processaCMD;
+    ProcessaCMD processador;
 
-    interface.mostrarMsg("Ola");
+    interface.mostrarMsg("Bem vindo ao jogo");
+
     while (simulador.isJogoAtivo()) {
-        std::string comandoUtilizador = interface.lerComando();
-
-        Comando *comando = processaCMD.processa(comandoUtilizador);
+        std::string input = interface.lerComando();
+        Comando* comando = processador.processa(input);
 
         if (comando != nullptr) {
             comando->executa(simulador);
-        } else {
-            interface.mostrarMsg("Comando invalido");
+            delete comando;
+
+
+            interface.mostraJardim(simulador.getJardim());
+        } else if (!input.empty()) {
+            interface.mostrarMsg("Comando invalido.");
         }
-
-        interface.mostraJardim(simulador.getGrelhaVisual());
     }
-    interface.mostrarMsg("Jogo Terminado!\n");
 
+    interface.mostrarMsg("A fechar o simulador.");
 
     return 0;
 }

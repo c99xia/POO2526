@@ -3,3 +3,8 @@
 //
 
 #include "cmdFim.h"
+#include "../../Model/Simulador.h"
+
+void cmdFim::executa(Simulador &simulador) {
+    simulador.terminarJogo();
+}

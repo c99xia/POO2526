@@ -7,8 +7,20 @@
 #include "Posicao.h"
 
 
+class Posicao;
+
 class Jardim {
-    Posicao * Tabuleiro;
+private:
+    Posicao* Tabuleiro;
+    int linhas;
+    int colunas;
+
+public:
+    Jardim();
+    ~Jardim();
+    void inicializar(int l, int c);
+    int getLinhas() const;
+    int getColunas() const;
 };
 
 

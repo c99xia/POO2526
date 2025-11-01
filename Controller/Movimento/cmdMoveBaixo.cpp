@@ -3,3 +3,7 @@
 //
 
 #include "cmdMoveBaixo.h"
+
+void cmdMoveBaixo::executa(Simulador &simulador) {
+
+}

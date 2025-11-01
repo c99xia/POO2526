@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BackendCodeEditorMiscSettings">
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
+  </component>
+  <component name="CMakePresetLoader"><![CDATA[{
+  "useNewFormat": true
+}]]></component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated>
+      <config projectName="POO2526" targetName="POO2526" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="98d7de43-306c-4065-895a-e7c56f1b99b8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/POO2526.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Projeto.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Acao/cmdColherPlanta.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Acao/cmdColherPlanta.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Acao/cmdColherPlanta.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Acao/cmdColherPlanta.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Acao/cmdComprarFerramenta.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Acao/cmdComprarFerramenta.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Acao/cmdComprarFerramenta.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Acao/cmdLargarFerramenta.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Acao/cmdLargarFerramenta.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Acao/cmdLargarFerramenta.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Acao/cmdPegarFerramenta.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Acao/cmdPegarFerramenta.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Acao/cmdPegarFerramenta.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Acao/cmdPlantar.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Acao/cmdPlantar.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Acao/cmdPlantar.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Comando.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Comando.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Comando.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Comando.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/EstadoJogo/cmdApagarEstadoJardim.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/EstadoJogo/cmdApagarEstadoJardim.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/EstadoJogo/cmdApagarEstadoJardim.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/EstadoJogo/cmdCriarJardim.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/EstadoJogo/cmdCriarJardim.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/EstadoJogo/cmdCriarJardim.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/EstadoJogo/cmdCriarJardim.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/EstadoJogo/cmdExecutaCmdTeste.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/EstadoJogo/cmdExecutaCmdTeste.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/EstadoJogo/cmdExecutaCmdTeste.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/EstadoJogo/cmdFim.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/EstadoJogo/cmdFim.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/EstadoJogo/cmdFim.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/EstadoJogo/cmdFim.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/EstadoJogo/cmdGravarEstadoJardim.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/EstadoJogo/cmdGravarEstadoJardim.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/EstadoJogo/cmdGravarEstadoJardim.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/EstadoJogo/cmdRecuperarEstadoJardim.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/EstadoJogo/cmdRecuperarEstadoJardim.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/EstadoJogo/cmdRecuperarEstadoJardim.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Instante/cmdAvancaInstante.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Instante/cmdAvancaInstante.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Instante/cmdAvancaInstante.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Listar/cmdListarArea.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Listar/cmdListarArea.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Listar/cmdListarArea.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Listar/cmdListarCertaArea.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Listar/cmdListarCertaArea.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Listar/cmdListarCertaArea.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Listar/cmdListarFerramentas.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Listar/cmdListarFerramentas.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Listar/cmdListarFerramentas.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Listar/cmdListarPlantasExistentesNoJardim.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Listar/cmdListarPlantasExistentesNoJardim.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Listar/cmdListarPlantasExistentesNoJardim.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Listar/cmdListarPropriedadesPlantaPosicao.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Listar/cmdListarPropriedadesPlantaPosicao.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Listar/cmdListarPropriedadesPlantaPosicao.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Movimento/cmdEntraJardineiro.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Movimento/cmdEntraJardineiro.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Movimento/cmdEntraJardineiro.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Movimento/cmdMoveBaixo.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Movimento/cmdMoveBaixo.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Movimento/cmdMoveBaixo.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Movimento/cmdMoveCima.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Movimento/cmdMoveCima.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Movimento/cmdMoveCima.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Movimento/cmdMoveDireita.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Movimento/cmdMoveDireita.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Movimento/cmdMoveDireita.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Movimento/cmdMoveEsquerda.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Movimento/cmdMoveEsquerda.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Movimento/cmdMoveEsquerda.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Movimento/cmdSaiJardineiro.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Movimento/cmdSaiJardineiro.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Movimento/cmdSaiJardineiro.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/ProcessaCMD.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/ProcessaCMD.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/ProcessaCMD.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/ProcessaCMD.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Beleza.h" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Beleza.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Ferramentas/Adubo.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Ferramentas/Adubo.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Ferramentas/Adubo.h" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Ferramentas/Adubo.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Ferramentas/Ferramenta.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Ferramentas/Ferramenta.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Ferramentas/Ferramenta.h" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Ferramentas/Ferramenta.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Ferramentas/Regador.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Ferramentas/Regador.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Ferramentas/Regador.h" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Ferramentas/Regador.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Ferramentas/Tesoura.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Ferramentas/Tesoura.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Ferramentas/Tesoura.h" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Ferramentas/Tesoura.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Ferramentas/Trator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Ferramentas/Trator.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Ferramentas/Trator.h" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Ferramentas/Trator.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Jardim.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Jardim.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Jardim.h" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Jardim.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Jardineiro.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Jardineiro.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Jardineiro.h" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Jardineiro.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Plantas/Cacto.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Plantas/Cacto.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Plantas/Cacto.h" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Plantas/Cacto.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Plantas/Daninha.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Plantas/Daninha.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Plantas/Daninha.h" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Plantas/Daninha.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Plantas/M4rg4rid4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Plantas/M4rg4rid4.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Plantas/M4rg4rid4.h" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Plantas/M4rg4rid4.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Plantas/Planta.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Plantas/Planta.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Plantas/Planta.h" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Plantas/Planta.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Plantas/Roseira.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Plantas/Roseira.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Plantas/Roseira.h" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Plantas/Roseira.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Posicao.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Posicao.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Posicao.h" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Posicao.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Prioridade.h" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Prioridade.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Simulador.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Simulador.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Simulador.h" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Simulador.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Settings.h" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Settings.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Interface.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/View/Interface.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Interface.h" beforeDir="false" afterPath="$PROJECT_DIR$/View/Interface.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2025" />
+    <option name="minorVersion" value="2.4" />
+    <option name="productBranch" value="Classic" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="34sbBmmBtcvJRwKLECKE8MFteAm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "CMake Application.POO2526.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.west.config.association.type.startup.service": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="POO2526" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="POO2526" TARGET_NAME="POO2526" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="POO2526" RUN_TARGET_NAME="POO2526">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="98d7de43-306c-4065-895a-e7c56f1b99b8" name="Changes" comment="" />
+      <created>1762005093748</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1762005093748</updated>
+      <workItem from="1762005095468" duration="912000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
+  </component>
+</project>

@@ -3,3 +3,11 @@
 //
 
 #include "cmdEntraJardineiro.h"
+void cmdEntraJardineiro::executa(Simulador &simulador) {
+
+}
+
+cmdEntraJardineiro::cmdEntraJardineiro(int linha, int coluna) {
+
+}
+

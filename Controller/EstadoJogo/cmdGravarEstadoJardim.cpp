@@ -3,3 +3,10 @@
 //
 
 #include "cmdGravarEstadoJardim.h"
+void cmdGravarEstadoJardim::executa(Simulador &simulador) {
+
+}
+cmdGravarEstadoJardim::cmdGravarEstadoJardim(const std::string &nome) {
+
+}
+

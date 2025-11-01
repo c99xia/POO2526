@@ -3,3 +3,6 @@
 //
 
 #include "cmdMoveCima.h"
+void cmdMoveCima::executa(Simulador &simulador) {
+
+}
