@@ -6,19 +6,19 @@
 
 Roseira::Roseira()
     : Planta(Beleza::linda),
-      nutrientesAcumRoseira(Settings::Roseira::inicial_nutrientes),
-      aguaAcumRoseira(Settings::Roseira::inicial_agua),
-      instantesVividos(0)
+    nutrientesAcumRoseira(Settings::Roseira::inicial_nutrientes),
+    aguaAcumRoseira(Settings::Roseira::inicial_agua),
+    instantesVividos(0)
 {
 }
 
-void Roseira::atualiza(Jardim &jardim, int linha, int coluna) {
+void Roseira::atualiza(Jardim& jardim, int linha, int coluna) {
     if (morta)
         return;
 
     ++instantesVividos;
 
-    Posicao &pos = jardim.getPosicao(linha, coluna);
+    Posicao& pos = jardim.getPosicao(linha, coluna);
 
     // 1) Perdas naturais de reservas
     if (aguaAcumRoseira > 0) {
@@ -55,6 +55,7 @@ void Roseira::atualiza(Jardim &jardim, int linha, int coluna) {
     }
 
     // 3) Verificar morte
+    // Morre se:  gua = 0, nutrientes = 0, nutrientes = 200
     if (aguaAcumRoseira < Settings::Roseira::morre_agua_menor ||
         nutrientesAcumRoseira < Settings::Roseira::morre_nutrientes_menor ||
         nutrientesAcumRoseira > Settings::Roseira::morre_nutrientes_maior) {
@@ -65,12 +66,40 @@ void Roseira::atualiza(Jardim &jardim, int linha, int coluna) {
         return;
     }
 
-    // 4) Tentar multiplicar se solo muito fértil
+    // Verificar se todas as posi  es vizinhas est o ocupadas (tamb m causa morte)
+    int linhas = jardim.getLinhas();
+    int colunas = jardim.getColunas();
+
+    int dl[8] = { -1,-1,-1, 0,0, 1,1,1 };
+    int dc[8] = { -1, 0, 1,-1,1,-1,0,1 };
+
+    int vizinhosOcupados = 0;
+    int vizinhosValidos = 0;  // vizinhos dentro dos limites do jardim
+
+    for (int i = 0; i < 8; ++i) {
+        int nl = linha + dl[i];
+        int nc = coluna + dc[i];
+
+        if (nl < 0 || nl >= linhas || nc < 0 || nc >= colunas)
+            continue;
+
+        ++vizinhosValidos;
+        Posicao& viz = jardim.getPosicao(nl, nc);
+        if (viz.temPlanta()) {
+            ++vizinhosOcupados;
+        }
+    }
+
+    // Se TODAS as posi  es vizinhas v lidas est o ocupadas, morre por "asfixia"
+    if (vizinhosValidos > 0 && vizinhosOcupados == vizinhosValidos) {
+        pos.adicionaNutrientes(nutrientesAcumRoseira / 2);
+        morta = true;
+        return;
+    }
+
+    // 4) Tentar multiplicar se solo muito f rtil
     if (pos.getNutrientes() <= Settings::Roseira::multiplica_nutrientes_maior)
         return;
-
-    int linhas  = jardim.getLinhas();
-    int colunas = jardim.getColunas();
 
     struct Coord {
         int l;
@@ -80,9 +109,6 @@ void Roseira::atualiza(Jardim &jardim, int linha, int coluna) {
     Coord livres[8];
     int nLivres = 0;
 
-    int dl[8] = {-1,-1,-1, 0,0, 1,1,1};
-    int dc[8] = {-1, 0, 1,-1,1,-1,0,1};
-
     for (int i = 0; i < 8; ++i) {
         int nl = linha + dl[i];
         int nc = coluna + dc[i];
@@ -90,7 +116,7 @@ void Roseira::atualiza(Jardim &jardim, int linha, int coluna) {
         if (nl < 0 || nl >= linhas || nc < 0 || nc >= colunas)
             continue;
 
-        Posicao &viz = jardim.getPosicao(nl, nc);
+        Posicao& viz = jardim.getPosicao(nl, nc);
         if (!viz.temPlanta()) {
             livres[nLivres].l = nl;
             livres[nLivres].c = nc;
@@ -99,12 +125,12 @@ void Roseira::atualiza(Jardim &jardim, int linha, int coluna) {
     }
 
     if (nLivres == 0)
-        return; // sem espaço para nova roseira
+        return; // sem espa o para nova roseira
 
     int idx = Random::getRandom(0, nLivres - 1);
     Coord escolhido = livres[idx];
 
-    Posicao &dest = jardim.getPosicao(escolhido.l, escolhido.c);
+    Posicao& dest = jardim.getPosicao(escolhido.l, escolhido.c);
 
     // Nutrientes para a nova roseira
     int nutrientesSolo = pos.getNutrientes();
@@ -114,7 +140,7 @@ void Roseira::atualiza(Jardim &jardim, int linha, int coluna) {
 
     pos.setNutrientes(nutrientesSolo - nutrientesNova);
 
-    Roseira *nova = new Roseira();
+    auto nova = std::make_unique<Roseira>();
     // Ajustar reservas de acordo com os Settings
     nova->nutrientesAcumRoseira = nutrientesNova;
     int aguaSoloAntes = pos.getAgua();
@@ -124,7 +150,8 @@ void Roseira::atualiza(Jardim &jardim, int linha, int coluna) {
     // Atualizar solo e roseira original
     pos.setAgua(aguaSoloAntes - aguaNova);
     nutrientesAcumRoseira = Settings::Roseira::original_nutrientes;
-    aguaAcumRoseira       = pos.getAgua() * Settings::Roseira::original_agua_percentagem / 100;
+    aguaAcumRoseira = pos.getAgua() * Settings::Roseira::original_agua_percentagem / 100;
 
-    dest.setPlanta(nova);
+    dest.setPlanta(std::move(nova));
 }
+

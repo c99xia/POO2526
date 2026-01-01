@@ -12,8 +12,8 @@ class cmdComprarFerramenta : public Comando {
 
 public:
     cmdComprarFerramenta(char ferramenta);
-
-    void executa(Simulador &simulador) override;
-    static Comando* criar(std::istringstream &iss);
+    std::string nome() const override { return "compra"; }
+    void executa(Simulador& simulador) override;
+    static Comando* criar(std::istringstream& iss);
 };
 #endif //PROJETO_CMDCOMPRARFERRAMENTA_H

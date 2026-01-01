@@ -1,9 +1,9 @@
 #include "cmdMoveDireita.h"
-void cmdMoveDireita::executa(Simulador &simulador) {
-	simulador.moveDireita();
+void cmdMoveDireita::executa(Simulador& simulador) {
+    simulador.moveDireita();
 }
 
-Comando *cmdMoveDireita::criar (std::istringstream &iss) {
+Comando* cmdMoveDireita::criar(std::istringstream& iss) {
     std::cout << "Comando d" << std::endl;
     std::string invalido;
     if (!(iss >> invalido)) {

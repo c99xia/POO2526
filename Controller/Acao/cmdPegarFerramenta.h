@@ -12,9 +12,10 @@ class cmdPegarFerramenta : public Comando {
 
 public:
     cmdPegarFerramenta(int numeroSerie);
+    std::string nome() const override { return "pega"; }
 
-    void executa(Simulador &simulador) override;;
+    void executa(Simulador& simulador) override;;
 
-    static Comando* criar(std::istringstream &iss);
+    static Comando* criar(std::istringstream& iss);
 };
 #endif //PROJETO_CMDPEGARFERRAMENTA_H

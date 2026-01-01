@@ -1,22 +1,22 @@
 #include "cmdApagarEstadoJardim.h"
 
-void cmdApagarEstadoJardim::executa(Simulador &simulador) {
-    simulador.apagarEstadoJardim(this->nome);
+void cmdApagarEstadoJardim::executa(Simulador& simulador) {
+    simulador.apagarEstadoJardim(this->nomeF);
 }
 
-cmdApagarEstadoJardim::cmdApagarEstadoJardim(const std::string &nome) :
-    nome(nome)
+cmdApagarEstadoJardim::cmdApagarEstadoJardim(const std::string& nome) :
+    nomeF(nome)
 {
 
 }
 
-Comando *cmdApagarEstadoJardim::criar (std::istringstream &iss) {
+Comando* cmdApagarEstadoJardim::criar(std::istringstream& iss) {
     std::cout << "Comando apaga" << std::endl;
     std::string nome;
-    if (iss>>nome) {
+    if (iss >> nome) {
         std::cout << "nome lido" << std::endl;
         std::string invalido;
-        if (!(iss>>invalido)) {
+        if (!(iss >> invalido)) {
             std::cout << "A construir o comando cmdApagarEstadoJardim" << std::endl;
             return new cmdApagarEstadoJardim(nome);
         }

@@ -5,7 +5,7 @@
 #include <iostream>
 #include "../Model/Jardineiro.h"
 
-void Interface::mostraJardim(const Jardim &jardim, const Jardineiro &jardineiro) {
+void Interface::mostraJardim(const Jardim& jardim, const Jardineiro& jardineiro) {
     int linhas = jardim.getLinhas();
     int colunas = jardim.getColunas();
 
@@ -31,21 +31,19 @@ void Interface::mostraJardim(const Jardim &jardim, const Jardineiro &jardineiro)
         std::cout << static_cast<char>('A' + l) << "  ";
 
         for (int c = 0; c < colunas; ++c) {
-            const Posicao &pos = jardim.getPosicao(l, c);
-            char ch = '.'; // vazio
+            const Posicao& pos = jardim.getPosicao(l, c);
+            char ch = ' '; // vazio
 
-            if (pos.getPlanta() != nullptr) {
+            // prioridade: jardineiro > planta > ferramenta > vazio
+            if (temJardineiro && l == jardineiroLinha && c == jardineiroColuna) {
+                ch = '*';
+            }
+            else if (pos.getPlanta() != nullptr) {
                 ch = pos.getPlanta()->getChar();
             }
-
-            if (pos.getFerramenta() != nullptr) {
+            else if (pos.getFerramenta() != nullptr) {
                 ch = pos.getFerramenta()->getChar();
             }
-
-            if (temJardineiro && l == jardineiroLinha && c == jardineiroColuna) {
-                ch = 'J';
-            }
-
 
             std::cout << ch << " ";
         }
@@ -69,6 +67,7 @@ std::string Interface::lerComando() const {
     return linha;
 }
 
-void Interface::mostrarMsg(const std::string &msg) const {
+void Interface::mostrarMsg(const std::string& msg) const {
     std::cout << "Mensagem: " << msg << std::endl;
 }
+

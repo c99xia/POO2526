@@ -8,15 +8,23 @@
 #include "../Jardim.h"
 
 
+// Planta Exótica (M4rg4rid4)
+// Comportamento especial: "purifica" plantas feias vizinhas,
+// transformando a beleza delas de feia para linda.
 class M4rg4rid4 : public Planta {
-    int nutrientesAcumM4rg4rid4, aguaAcumM4rg4rid4, instantesVividos;
+    int nutrientesAcumM4rg4rid4;
+    int aguaAcumM4rg4rid4;
+    int instantesVividos;
+
+    // Função auxiliar para purificar vizinhos feios
+    void purificarVizinhos(Jardim& jardim, int linha, int coluna);
 
 public:
     M4rg4rid4();
 
     char getChar() const override { return 'x'; }
 
-    void atualiza(Jardim &jardim, int linha, int coluna) override;
+    void atualiza(Jardim& jardim, int linha, int coluna) override;
 };
 
 

@@ -1,17 +1,17 @@
 #include "cmdColherPlanta.h"
 
-void cmdColherPlanta::executa(Simulador &simulador)
+void cmdColherPlanta::executa(Simulador& simulador)
 {
     simulador.colhePlanta(this->linha, this->coluna);
 }
 
 cmdColherPlanta::cmdColherPlanta(int linha, int coluna) :
-    linha (linha), coluna (coluna)
+    linha(linha), coluna(coluna)
 {
 
 }
 
-Comando *cmdColherPlanta::criar (std::istringstream &iss) {
+Comando* cmdColherPlanta::criar(std::istringstream& iss) {
     std::cout << "Comando colhe" << std::endl;
     std::string posicao;
     if (iss >> posicao) {

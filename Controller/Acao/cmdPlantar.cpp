@@ -1,15 +1,15 @@
 #include "cmdPlantar.h"
 
-void cmdPlantar::executa(Simulador &simulador) {
+void cmdPlantar::executa(Simulador& simulador) {
     simulador.plantar(this->linha, this->coluna, this->tipo_planta);
 }
 
 cmdPlantar::cmdPlantar(int linha, int coluna, char tipo_planta) :
-    linha (linha), coluna (coluna), tipo_planta(tipo_planta)
+    linha(linha), coluna(coluna), tipo_planta(tipo_planta)
 {
 }
 
-Comando *cmdPlantar::criar (std::istringstream &iss) {
+Comando* cmdPlantar::criar(std::istringstream& iss) {
     std::cout << "Comando planta" << std::endl;
     std::string posicao;
     if (iss >> posicao) {

@@ -1,11 +1,11 @@
 #include "cmdFim.h"
 #include "../../Model/Simulador.h"
 
-void cmdFim::executa(Simulador &simulador) {
+void cmdFim::executa(Simulador& simulador) {
     simulador.terminarJogo();
 }
 
-Comando *cmdFim::criar (std::istringstream &iss) {
+Comando* cmdFim::criar(std::istringstream& iss) {
     std::cout << "Comando fim" << std::endl;
     std::string invalido;
     if (!(iss >> invalido)) {

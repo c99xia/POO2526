@@ -3,11 +3,11 @@
 
 cmdCriarJardim::cmdCriarJardim(int linha, int coluna) : linha(linha), coluna(coluna) {}
 
-void cmdCriarJardim::executa(Simulador &simulador) {
+void cmdCriarJardim::executa(Simulador& simulador) {
     simulador.criarJardim(this->linha, this->coluna);
 }
 
-Comando *cmdCriarJardim::criar (std::istringstream &iss) {
+Comando* cmdCriarJardim::criar(std::istringstream& iss) {
     std::cout << "Comando jardim" << std::endl;
     int linha, coluna;
     if (iss >> linha) {

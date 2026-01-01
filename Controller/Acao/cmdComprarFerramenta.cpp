@@ -1,6 +1,6 @@
 #include "cmdComprarFerramenta.h"
 
-void cmdComprarFerramenta::executa(Simulador &simulador)
+void cmdComprarFerramenta::executa(Simulador& simulador)
 {
     simulador.comprarFerramenta(this->ferramenta);
 }
@@ -11,7 +11,7 @@ cmdComprarFerramenta::cmdComprarFerramenta(char ferramenta) :
 
 }
 
-Comando *cmdComprarFerramenta::criar (std::istringstream &iss) {
+Comando* cmdComprarFerramenta::criar(std::istringstream& iss) {
     std::cout << "Comando compra" << std::endl;
     char ferramentaComprar;
     if (iss >> ferramentaComprar) {

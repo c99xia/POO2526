@@ -1,10 +1,10 @@
 #include "cmdLargarFerramenta.h"
-void cmdLargarFerramenta::executa(Simulador &simulador)
+void cmdLargarFerramenta::executa(Simulador& simulador)
 {
     simulador.largarFerramenta();
 }
 
-Comando *cmdLargarFerramenta::criar (std::istringstream &iss) {
+Comando* cmdLargarFerramenta::criar(std::istringstream& iss) {
     std::cout << "Comando larga" << std::endl;
     std::string invalido;
     if (!(iss >> invalido)) {

@@ -12,8 +12,8 @@ class cmdExecutaCmdTeste : public Comando {
 
 public:
     cmdExecutaCmdTeste(const std::string& nome_do_ficheiro);
-
-    void executa(Simulador &simulador) override;
-    static Comando* criar(std::istringstream &iss);
+    std::string nome() const override { return "executa"; }
+    void executa(Simulador& simulador) override;
+    static Comando* criar(std::istringstream& iss);
 };
 #endif //PROJETO_CMDEXECUTACMDTESTE_H

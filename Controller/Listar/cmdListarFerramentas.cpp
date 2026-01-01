@@ -1,9 +1,9 @@
 #include "cmdListarFerramentas.h"
-void cmdListarFerramentas::executa(Simulador &simulador) {
+void cmdListarFerramentas::executa(Simulador& simulador) {
     simulador.listarFerramenta();
 }
 
-Comando *cmdListarFerramentas::criar (std::istringstream &iss) {
+Comando* cmdListarFerramentas::criar(std::istringstream& iss) {
     std::cout << "Comando lferr" << std::endl;
     std::string invalido;
     if (!(iss >> invalido)) {

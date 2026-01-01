@@ -1,6 +1,6 @@
 #include "cmdEntraJardineiro.h"
-void cmdEntraJardineiro::executa(Simulador &simulador) {
-    simulador.entrarJardineiro (this->linha, this->coluna);
+void cmdEntraJardineiro::executa(Simulador& simulador) {
+    simulador.entrarJardineiro(this->linha, this->coluna);
 }
 
 cmdEntraJardineiro::cmdEntraJardineiro(int linha, int coluna) :
@@ -10,7 +10,7 @@ cmdEntraJardineiro::cmdEntraJardineiro(int linha, int coluna) :
 
 }
 
-Comando *cmdEntraJardineiro::criar (std::istringstream &iss) {
+Comando* cmdEntraJardineiro::criar(std::istringstream& iss) {
     std::cout << "Comando entra" << std::endl;
     std::string posicao;
     if (iss >> posicao) {
@@ -33,3 +33,4 @@ Comando *cmdEntraJardineiro::criar (std::istringstream &iss) {
     std::cout << "comando incorreto'" << std::endl;
     return nullptr;
 }
+

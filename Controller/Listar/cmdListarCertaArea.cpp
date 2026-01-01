@@ -1,6 +1,6 @@
 #include "cmdListarCertaArea.h"
-void cmdListarCertaArea::executa(Simulador &simulador) {
-    simulador.listarCertaArea (this->linha, this->coluna, this->raio);
+void cmdListarCertaArea::executa(Simulador& simulador) {
+    simulador.listarCertaArea(this->linha, this->coluna, this->raio);
 }
 cmdListarCertaArea::cmdListarCertaArea(int linha, int coluna, int raio)
     : linha(linha), coluna(coluna), raio(raio)
@@ -8,7 +8,7 @@ cmdListarCertaArea::cmdListarCertaArea(int linha, int coluna, int raio)
 
 }
 
-Comando *cmdListarCertaArea::criar (std::istringstream &iss) {
+Comando* cmdListarCertaArea::criar(std::istringstream& iss) {
     std::cout << "Comando lsolo" << std::endl;
     std::string posicao;
     if (iss >> posicao) {
@@ -27,7 +27,7 @@ Comando *cmdListarCertaArea::criar (std::istringstream &iss) {
             }
             std::string invalido;
             if (!(iss >> invalido)) {
-                if (raio>=0) {
+                if (raio >= 0) {
                     std::cout << "A construir o comando cmdListarCertaArea" << std::endl;
                     return new cmdListarCertaArea(linha, coluna, raio);
                 }

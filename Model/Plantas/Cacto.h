@@ -16,24 +16,24 @@ class Cacto : public Planta {
     // Criei aqui funções auxiliares apenas usada nesta classe e mais nada
 
     //Absorção
-    void absorveAguaDoSolo(class Posicao &pos);
-    void absorveNutrientesDoSolo(class Posicao &pos);
+    void absorveAguaDoSolo(class Posicao& pos);
+    void absorveNutrientesDoSolo(class Posicao& pos);
 
     //Morte do cacto
-    void atualizaContadoresMorte(const class Posicao &pos);
+    void atualizaContadoresMorte(const class Posicao& pos);
     bool deveMorrer() const;
-    void morre(class Posicao &pos);
+    void morre(class Posicao& pos);
 
     //Multiplicação
     bool podeMultiplicar() const;
-    bool tentaMultiplicarParaVizinhoLivre(Jardim &jardim, int linha, int coluna);
+    bool tentaMultiplicarParaVizinhoLivre(Jardim& jardim, int linha, int coluna);
 
 public:
     Cacto();
     Cacto(int nutrientes, int agua);
 
-    char getChar() const override {return 'c';}
-    void atualiza(Jardim &jardim, int linha, int coluna) override;
+    char getChar() const override { return 'c'; }
+    void atualiza(Jardim& jardim, int linha, int coluna) override;
 };
 
 #endif //PROJETO_CACTO_H

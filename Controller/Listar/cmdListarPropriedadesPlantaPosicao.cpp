@@ -1,15 +1,15 @@
 #include "cmdListarPropriedadesPlantaPosicao.h"
 
-void cmdListarPropriedadesPlantaPosicao::executa(Simulador &simulador) {
+void cmdListarPropriedadesPlantaPosicao::executa(Simulador& simulador) {
     simulador.listarPropriedadesPlantaPosicao(this->linha, this->coluna);
 }
-cmdListarPropriedadesPlantaPosicao::cmdListarPropriedadesPlantaPosicao(int linha, int coluna):
+cmdListarPropriedadesPlantaPosicao::cmdListarPropriedadesPlantaPosicao(int linha, int coluna) :
     linha(linha), coluna(coluna)
 {
 
 }
 
-Comando *cmdListarPropriedadesPlantaPosicao::criar (std::istringstream &iss) {
+Comando* cmdListarPropriedadesPlantaPosicao::criar(std::istringstream& iss) {
     std::cout << "Comando lplanta posicoes" << std::endl;
     std::string posicao;
     if (iss >> posicao) {

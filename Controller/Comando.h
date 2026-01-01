@@ -1,17 +1,18 @@
-//
-// Created by xiaro on 10/24/2025.
-//
-
 #ifndef PROJETO_COMANDO_H
 #define PROJETO_COMANDO_H
+
+#include <string>
 
 class Simulador;
 
 class Comando {
 public:
-    virtual void executa(Simulador &simulador) = 0;
+    virtual void executa(Simulador& simulador) = 0;
+
+    // Regra do jardim
+    virtual std::string nome() const = 0;
+
     virtual ~Comando() = default;
 };
 
-
-#endif //PROJETO_COMANDO_H
+#endif

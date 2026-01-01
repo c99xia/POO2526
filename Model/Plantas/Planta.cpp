@@ -2,6 +2,6 @@
 
 Planta::Planta(Beleza b)
     : morta(false),
-      beleza(b)
+    beleza(b)
 {
 }

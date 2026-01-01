@@ -31,7 +31,7 @@
 #include "Movimento/cmdMoveEsquerda.h"
 #include "Movimento/cmdSaiJardineiro.h"
 
-Comando *ProcessaCMD::processa(std::string &inputUtilizador) {
+Comando* ProcessaCMD::processa(std::string& inputUtilizador) {
     std::istringstream iss(inputUtilizador);
     std::string cmd;
 
@@ -45,7 +45,7 @@ Comando *ProcessaCMD::processa(std::string &inputUtilizador) {
         return cmdAvancaInstante::criar(iss);
     }
 
-    // Comandos para listar informação
+    // Comandos para listar informa  o
     else if (cmd == "lplantas") {
         return cmdListarPlantasExistentesNoJardim::criar(iss);
     }
@@ -62,7 +62,7 @@ Comando *ProcessaCMD::processa(std::string &inputUtilizador) {
         return cmdListarFerramentas::criar(iss);
     }
 
-    // Comandos de ação
+    // Comandos de a  o
     else if (cmd == "colhe") {
         return cmdColherPlanta::criar(iss);
     }
@@ -124,5 +124,8 @@ Comando *ProcessaCMD::processa(std::string &inputUtilizador) {
     std::cout << "Comando desconhecido: " << cmd << std::endl;
     return nullptr;
 }
+
+
+
 
 

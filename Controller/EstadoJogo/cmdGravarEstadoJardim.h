@@ -8,12 +8,12 @@
 
 
 class cmdGravarEstadoJardim : public Comando {
-    std::string nome;
+    std::string nomeF;
 
 public:
     cmdGravarEstadoJardim(const std::string& nome);
-
-    void executa(Simulador &simulador) override;
-    static Comando* criar(std::istringstream &iss);
+    std::string nome() const override { return "grava"; }
+    void executa(Simulador& simulador) override;
+    static Comando* criar(std::istringstream& iss);
 };
 #endif //PROJETO_CMDGRAVARESTADOJARDIM_H
