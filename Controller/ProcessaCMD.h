@@ -10,7 +10,7 @@
 class ProcessaCMD {
 public:
     ProcessaCMD() = default;
-    Comando *processa(std::string &inputUtilizador);
+    Comando* processa(std::string& inputUtilizador);
 };
 
 

@@ -7,12 +7,12 @@ class Simulador;
 
 class Comando {
 public:
-    virtual void executa(Simulador &simulador) = 0;
+    virtual void executa(Simulador& simulador) = 0;
 
-    // Identificador do comando (para regras do enunciado sem dynamic_cast)
+    // Regra do jardim
     virtual std::string nome() const = 0;
 
     virtual ~Comando() = default;
 };
 
-#endif //PROJETO_COMANDO_H
+#endif

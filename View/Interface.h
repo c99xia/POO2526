@@ -15,7 +15,7 @@ public:
 
     std::string lerComando() const;
 
-    void mostrarMsg(const std::string &msg) const;
+    void mostrarMsg(const std::string& msg) const;
 };
 
 

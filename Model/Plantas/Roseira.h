@@ -13,7 +13,7 @@ public:
     Roseira();
 
     char getChar() const override { return 'r'; }
-    void atualiza(Jardim &jardim, int linha, int coluna) override;
+    void atualiza(Jardim& jardim, int linha, int coluna) override;
 };
 
 #endif //PROJETO_ROSEIRA_H

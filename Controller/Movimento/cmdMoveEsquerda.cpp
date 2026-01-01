@@ -1,9 +1,11 @@
 #include "cmdMoveEsquerda.h"
-void cmdMoveEsquerda::executa(Simulador &simulador) {
+#include "../../Model/Simulador.h"
+#include <iostream>
+void cmdMoveEsquerda::executa(Simulador& simulador) {
     simulador.moveEsquerda();
 }
 
-Comando *cmdMoveEsquerda::criar (std::istringstream &iss) {
+Comando* cmdMoveEsquerda::criar(std::istringstream& iss) {
     std::cout << "Comando e" << std::endl;
     std::string invalido;
     if (!(iss >> invalido)) {

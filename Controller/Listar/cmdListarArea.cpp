@@ -1,10 +1,10 @@
 #include "cmdListarArea.h"
 
-void cmdListarArea::executa(Simulador &simulador) {
+void cmdListarArea::executa(Simulador& simulador) {
     simulador.listarArea();
 }
 
-Comando *cmdListarArea::criar (std::istringstream &iss) {
+Comando* cmdListarArea::criar(std::istringstream& iss) {
     std::cout << "Comando larea" << std::endl;
     std::string invalido;
     if (!(iss >> invalido)) {

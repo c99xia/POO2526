@@ -14,7 +14,7 @@ public:
     cmdListarCertaArea(int linha, int coluna, int raio);
     std::string nome() const override { return "lsolo"; }
 
-    void executa(Simulador &simulador) override;
-    static Comando* criar(std::istringstream &iss);
+    void executa(Simulador& simulador) override;
+    static Comando* criar(std::istringstream& iss);
 };
 #endif //PROJETO_CMDLISTARCERTAAREA_H

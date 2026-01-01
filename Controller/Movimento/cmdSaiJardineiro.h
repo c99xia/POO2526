@@ -12,8 +12,8 @@ public:
     cmdSaiJardineiro() = default;
     std::string nome() const override { return "sai"; }
 
-    void executa(Simulador &simulador) override;
-    static Comando* criar(std::istringstream &iss);
+    void executa(Simulador& simulador) override;
+    static Comando* criar(std::istringstream& iss);
 };
 
 

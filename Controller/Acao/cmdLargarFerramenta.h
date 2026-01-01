@@ -11,7 +11,7 @@ public:
     cmdLargarFerramenta() = default;
     std::string nome() const override { return "larga"; }
 
-    void executa(Simulador &simulador) override;
-    static Comando* criar(std::istringstream &iss);
+    void executa(Simulador& simulador) override;
+    static Comando* criar(std::istringstream& iss);
 };
 #endif //PROJETO_CMDLARGARFERRAMENTA_H

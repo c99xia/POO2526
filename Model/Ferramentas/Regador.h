@@ -11,16 +11,16 @@ class Regador : public Ferramenta {
 public:
     Regador()
         : capacidade(Settings::Regador::capacidade),
-          aguaAtual(Settings::Regador::capacidade)
-    {}
+        aguaAtual(Settings::Regador::capacidade)
+    {
+    }
 
     char getChar() const override { return 'g'; }
 
     int getAguaAtual() const { return aguaAtual; }
-    void gastarAgua(int dose) {
-        if (dose > aguaAtual) dose = aguaAtual;
-        aguaAtual -= dose;
-    }
+
+    // Dá +10 água ao solo, consome água interna
+    bool atua(Jardim& jardim, int linha, int coluna) override;
 };
 
 #endif //PROJETO_REGADOR_H

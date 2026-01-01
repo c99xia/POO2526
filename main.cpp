@@ -38,7 +38,8 @@ int main() {
 
             interface.mostraJardim(simulador.getJardim(), simulador.getJardineiro());
 
-        } else if (!input.empty()) {
+        }
+        else if (!input.empty()) {
             interface.mostrarMsg("Comando invalido.");
         }
     }
@@ -46,3 +47,4 @@ int main() {
     interface.mostrarMsg("A fechar o simulador.");
     return 0;
 }
+

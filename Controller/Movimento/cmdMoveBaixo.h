@@ -11,8 +11,8 @@ public:
     cmdMoveBaixo() = default;
     std::string nome() const override { return "b"; }
 
-    void executa(Simulador &simulador) override;
-    static Comando* criar(std::istringstream &iss);
+    void executa(Simulador& simulador) override;
+    static Comando* criar(std::istringstream& iss);
 };
 
 #endif //PROJETO_CMDMOVEBAIXO_H

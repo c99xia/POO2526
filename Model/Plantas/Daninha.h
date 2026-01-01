@@ -14,7 +14,7 @@ public:
     Daninha();
 
     char getChar() const override { return 'e'; }
-    void atualiza(Jardim &jardim, int linha, int coluna) override;
+    void atualiza(Jardim& jardim, int linha, int coluna) override;
 };
 
 #endif // PROJETO_DANINHA_H

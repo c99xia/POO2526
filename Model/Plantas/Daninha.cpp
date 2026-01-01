@@ -3,22 +3,23 @@
 #include "../Posicao.h"
 #include "../../Utils/Settings.h"
 #include "../../Utils/Random.h"
+#include <memory>
 
 Daninha::Daninha()
     : Planta(Beleza::feia),
-      nutrientesAcumDaninha(Settings::ErvaDaninha::inicial_nutrientes),
-      aguaAcumDaninha(Settings::ErvaDaninha::inicial_agua),
-      instantesVividos(0)
+    nutrientesAcumDaninha(Settings::ErvaDaninha::inicial_nutrientes),
+    aguaAcumDaninha(Settings::ErvaDaninha::inicial_agua),
+    instantesVividos(0)
 {
 }
 
-void Daninha::atualiza(Jardim &jardim, int linha, int coluna) {
+void Daninha::atualiza(Jardim& jardim, int linha, int coluna) {
     if (morta)
         return;
 
     ++instantesVividos;
 
-    Posicao &pos = jardim.getPosicao(linha, coluna);
+    Posicao& pos = jardim.getPosicao(linha, coluna);
 
     // 1) Absorve um bocadinho do solo
     int aguaSolo = pos.getAgua();
@@ -51,17 +52,39 @@ void Daninha::atualiza(Jardim &jardim, int linha, int coluna) {
         return;
     }
 
-    // 3) Tentar multiplicar de X em X instantes, se houver muitos nutrientes no solo
+    // 3) Tentar multiplicar de X em X instantes
     if (instantesVividos % Settings::ErvaDaninha::multiplica_instantes != 0)
-        return; // ainda não é altura de multiplicar
+        return; // ainda n o   altura de multiplicar
 
-    if (pos.getNutrientes() <= Settings::ErvaDaninha::multiplica_nutrientes_maior)
-        return; // solo ainda não tem nutrientes suficientes
+    // CORRIGIDO: Verificar nutrientes INTERNOS da planta (n o do solo)
+    // Enunciado: "Multiplica-se a cada 5 instantes se nutrientes > 30"
+    if (nutrientesAcumDaninha <= Settings::ErvaDaninha::multiplica_nutrientes_maior)
+        return; // n o tem nutrientes internos suficientes
 
-    // Recolher vizinhos livres (8 direções)
     int linhas = jardim.getLinhas();
     int colunas = jardim.getColunas();
 
+    int dl[8] = { -1,-1,-1, 0,0, 1,1,1 };
+    int dc[8] = { -1, 0, 1,-1,1,-1,0,1 };
+
+    // PRIMEIRO: Matar todas as plantas vizinhas (conforme enunciado)
+    // "Mata plantas vizinhas ao multiplicar"
+    for (int i = 0; i < 8; ++i) {
+        int nl = linha + dl[i];
+        int nc = coluna + dc[i];
+
+        if (nl < 0 || nl >= linhas || nc < 0 || nc >= colunas)
+            continue;
+
+        Posicao& viz = jardim.getPosicao(nl, nc);
+        Planta* plantaVizinha = viz.getPlanta();
+
+        if (plantaVizinha != nullptr && !plantaVizinha->estaMorta()) {
+            viz.removePlanta();
+        }
+    }
+
+    // DEPOIS: Recolher vizinhos livres (8 dire  es) para colocar nova daninha
     struct Coord {
         int l;
         int c;
@@ -70,9 +93,6 @@ void Daninha::atualiza(Jardim &jardim, int linha, int coluna) {
     Coord livres[8];
     int nLivres = 0;
 
-    int dl[8] = {-1,-1,-1, 0,0, 1,1,1};
-    int dc[8] = {-1, 0, 1,-1,1,-1,0,1};
-
     for (int i = 0; i < 8; ++i) {
         int nl = linha + dl[i];
         int nc = coluna + dc[i];
@@ -80,7 +100,7 @@ void Daninha::atualiza(Jardim &jardim, int linha, int coluna) {
         if (nl < 0 || nl >= linhas || nc < 0 || nc >= colunas)
             continue;
 
-        Posicao &viz = jardim.getPosicao(nl, nc);
+        Posicao& viz = jardim.getPosicao(nl, nc);
         if (!viz.temPlanta()) {
             livres[nLivres].l = nl;
             livres[nLivres].c = nc;
@@ -89,26 +109,25 @@ void Daninha::atualiza(Jardim &jardim, int linha, int coluna) {
     }
 
     if (nLivres == 0)
-        return; // não há espaço para multiplicar
+        return; // n o h  espa o para multiplicar
 
-    // Escolher uma posição livre aleatória
+    // Escolher uma posi  o livre aleat ria
     int idx = Random::getRandom(0, nLivres - 1);
     Coord escolhido = livres[idx];
 
-    Posicao &dest = jardim.getPosicao(escolhido.l, escolhido.c);
+    Posicao& dest = jardim.getPosicao(escolhido.l, escolhido.c);
 
-    // Nutrientes para a nova daninha
+    // Nutrientes para a nova daninha (v m da planta m e)
     int nutrientesNovo = Settings::ErvaDaninha::nova_nutrientes;
-    int nutrientesSolo = pos.getNutrientes();
-    if (nutrientesNovo > nutrientesSolo)
-        nutrientesNovo = nutrientesSolo;
+    if (nutrientesNovo > nutrientesAcumDaninha)
+        nutrientesNovo = nutrientesAcumDaninha;
 
-    pos.setNutrientes(nutrientesSolo - nutrientesNovo);
+    nutrientesAcumDaninha -= nutrientesNovo;
 
-    Daninha *nova = new Daninha();
-    // sobrescrevemos a reserva para refletir os nutrientes retirados agora
+    auto nova = std::make_unique<Daninha>();
     nova->nutrientesAcumDaninha = nutrientesNovo;
-    nova->aguaAcumDaninha      = Settings::ErvaDaninha::inicial_agua;
+    nova->aguaAcumDaninha = Settings::ErvaDaninha::inicial_agua;
 
-    dest.setPlanta(nova);
+    dest.setPlanta(std::move(nova));
 }
+

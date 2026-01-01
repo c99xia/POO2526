@@ -1,15 +1,15 @@
 #include "cmdAvancaInstante.h"
 cmdAvancaInstante::cmdAvancaInstante(int instante) :
-    instante (instante)
+    instante(instante)
 {
 
 }
 
-void cmdAvancaInstante::executa(Simulador &simulador) {
+void cmdAvancaInstante::executa(Simulador& simulador) {
     simulador.avancaInstante(this->instante);
 }
 
-Comando* cmdAvancaInstante::criar(std::istringstream &iss) {
+Comando* cmdAvancaInstante::criar(std::istringstream& iss) {
     std::cout << "Comando avanca" << std::endl;
     int instante = 1;
     if (iss.peek() != EOF) {

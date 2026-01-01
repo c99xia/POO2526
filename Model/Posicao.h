@@ -1,23 +1,23 @@
 #ifndef PROJETO_POSICAO_H
 #define PROJETO_POSICAO_H
 
-#include "Ferramentas/Ferramenta.h"
-#include "Plantas/Planta.h"
+#include <memory>
+class Ferramenta;
+class Planta;
 
 class Posicao {
     int agua;
     int nutrientes;
-    Planta *planta; //usam-se ponteiros * e não objetos diretos Planta planta, porque a posição pode estar vazia.
-    //planta == nullptr (não há planta)
-    //planta != nullptr (existe planta) permite saber facilmente se o espaço está ocupado ou não
-    Ferramenta *ferramenta;
+
+    std::unique_ptr<Planta> planta;
+    std::unique_ptr<Ferramenta> ferramenta;
 
 public:
     Posicao();
-
-    // O solo tem água e nutrientes, logo podemos ter aqui um getter e um setter
-    int getAgua() const {return agua;}
-    int getNutrientes() const {return nutrientes;}
+    ~Posicao();
+    // Solo
+    int getAgua() const { return agua; }
+    int getNutrientes() const { return nutrientes; }
 
     void setAgua(int valor);
     void setNutrientes(int valor);
@@ -25,15 +25,18 @@ public:
     void adicionaAgua(int quantidadeAgua);
     void adicionaNutrientes(int quantidadeNutriente);
 
-    // O solo também pode ter planta
-    Planta* getPlanta() const {return planta;}
-    void setPlanta(Planta *p);
-    bool temPlanta() const;
+    // Planta
+    Planta* getPlanta() const { return planta.get(); }   // devolve ponteiro cru, sem ownership
+    void setPlanta(std::unique_ptr<Planta> p);           // toma posse
+    bool temPlanta() const { return planta != nullptr; }
+    void removePlanta();         // opcional mas útil
 
-    // O solo também pode ter ferramenta
-    Ferramenta* getFerramenta() const {return ferramenta;}
-    void setFerramenta(Ferramenta *f);
-    bool temFerramenta() const;
+    // Ferramenta
+    Ferramenta* getFerramenta() const { return ferramenta.get(); }
+    void setFerramenta(std::unique_ptr<Ferramenta> f);   // toma posse
+    bool temFerramenta() const { return ferramenta != nullptr; }
+    std::unique_ptr<Ferramenta> retiraFerramenta();      // para "pegar" (move)
 };
+
 
 #endif //PROJETO_POSICAO_H

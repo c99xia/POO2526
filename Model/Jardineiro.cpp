@@ -3,24 +3,47 @@
 
 Jardineiro::Jardineiro()
     : linha(0),
-      coluna(0),
-      presente(false),
-      ferramentaNaMao(nullptr),
-      movimentosRestantes(0),
-      plantacoesRestantes(0),
-      colheitasRestantes(0) {
+    coluna(0),
+    presente(false),
+    ferramentaNaMao(nullptr),
+    movimentosRestantes(0),
+    plantacoesRestantes(0),
+    colheitasRestantes(0),
+    entradasRestantes(1),
+    saidasRestantes(1) {
+}
+
+bool Jardineiro::podeEntrar() const {
+    return entradasRestantes > 0;
+}
+
+bool Jardineiro::podeSair() const {
+    return presente && saidasRestantes > 0;
 }
 
 void Jardineiro::entrar(int l, int c) {
     linha = l;
     coluna = c;
     presente = true;
-    resetContadoresTurno();
+    --entradasRestantes;
+
+    // Se não estava presente antes, inicializa os contadores
+    // (exceto entradas que já foi decrementado)
+    if (movimentosRestantes == 0) {
+        movimentosRestantes = Settings::Jardineiro::max_movimentos;
+        plantacoesRestantes = Settings::Jardineiro::max_plantacoes;
+        colheitasRestantes = Settings::Jardineiro::max_colheitas;
+    }
 }
 
 void Jardineiro::sair() {
     presente = false;
-    ferramentaNaMao=nullptr;
+    --saidasRestantes;
+
+    // Ao sair, guarda a ferramenta no inventário
+    if (ferramentaNaMao) {
+        ferramentas.push_back(std::move(ferramentaNaMao));
+    }
 }
 
 void Jardineiro::movimentaPara(int novaLinha, int novaColuna) {
@@ -36,6 +59,8 @@ void Jardineiro::resetContadoresTurno() {
     movimentosRestantes = Settings::Jardineiro::max_movimentos;
     plantacoesRestantes = Settings::Jardineiro::max_plantacoes;
     colheitasRestantes = Settings::Jardineiro::max_colheitas;
+    entradasRestantes = 1;  // máximo 1 entrada por turno
+    saidasRestantes = 1;    // máximo 1 saída por turno
 }
 
 bool Jardineiro::podeMover() const {
@@ -58,13 +83,17 @@ void Jardineiro::registaColheita() {
     if (colheitasRestantes > 0) --colheitasRestantes;
 }
 
-void Jardineiro::pegaFerramenta(Ferramenta* f) {
-    ferramentaNaMao = f;
+void Jardineiro::pegaFerramenta(std::unique_ptr<Ferramenta> f) {
+    if (ferramentaNaMao) {
+        // Se ja tem uma na mao, guarda no inventario
+        ferramentas.push_back(std::move(ferramentaNaMao));
+    }
+    ferramentaNaMao = std::move(f);
 }
 
-Ferramenta* Jardineiro::largaFerramentaDaMao() {
-    Ferramenta* tmp = ferramentaNaMao;
-    ferramentaNaMao = nullptr;
-    return tmp;
+std::unique_ptr<Ferramenta> Jardineiro::largaFerramentaDaMao() {
+    return std::move(ferramentaNaMao);
 }
+
+
 

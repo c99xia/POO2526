@@ -1,15 +1,15 @@
 #include "cmdPegarFerramenta.h"
-void cmdPegarFerramenta::executa(Simulador &simulador) {
+void cmdPegarFerramenta::executa(Simulador& simulador) {
     simulador.pegarFerramenta(this->numeroSerie);
 }
 
 cmdPegarFerramenta::cmdPegarFerramenta(int numeroSerie) :
-    numeroSerie (numeroSerie)
+    numeroSerie(numeroSerie)
 {
 
 }
 
-Comando *cmdPegarFerramenta::criar (std::istringstream &iss) {
+Comando* cmdPegarFerramenta::criar(std::istringstream& iss) {
     std::cout << "Comando pega" << std::endl;
     int numeroSerie;
     if (iss >> numeroSerie) {

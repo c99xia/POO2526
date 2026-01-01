@@ -8,6 +8,9 @@ public:
     Tesoura() = default;
 
     char getChar() const override { return 't'; }
+
+    // Elimina plantas feias na posição
+    bool atua(Jardim& jardim, int linha, int coluna) override;
 };
 
 #endif //PROJETO_TESOURA_H

@@ -3,6 +3,7 @@
 int Ferramenta::proximoNumeroSerie = 1;
 
 Ferramenta::Ferramenta()
-    : numeroSerie(proximoNumeroSerie++)
+    : numeroSerie(proximoNumeroSerie++),
+      gasta(false)
 {
 }

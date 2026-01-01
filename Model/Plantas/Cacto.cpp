@@ -5,18 +5,18 @@
 
 Cacto::Cacto()
     : Planta(Beleza::neutra),
-      nutrientesAcumCacto(0),
-      aguaAcumCacto(0),
-      contAguaSoloAlta(0),
-      contNutrientesSoloZero(0) {
+    nutrientesAcumCacto(0),
+    aguaAcumCacto(0),
+    contAguaSoloAlta(0),
+    contNutrientesSoloZero(0) {
 }
 
 Cacto::Cacto(int nutrientes, int agua)
     : Planta(Beleza::neutra),
-      nutrientesAcumCacto(nutrientes),
-      aguaAcumCacto(agua),
-      contAguaSoloAlta(0),
-      contNutrientesSoloZero(0) {
+    nutrientesAcumCacto(nutrientes),
+    aguaAcumCacto(agua),
+    contAguaSoloAlta(0),
+    contNutrientesSoloZero(0) {
 }
 
 //Absorção
@@ -25,13 +25,13 @@ Cacto::Cacto(int nutrientes, int agua)
  *
  *
  */
-void Cacto::absorveAguaDoSolo(Posicao &pos) {
+void Cacto::absorveAguaDoSolo(Posicao& pos) {
     int aguaSolo = pos.getAgua();
     if (aguaSolo <= 0)
         return;
 
     int absorverAgua =
-            aguaSolo * Settings::Cacto::absorcao_agua_percentagem / 100;
+        aguaSolo * Settings::Cacto::absorcao_agua_percentagem / 100;
 
     if (absorverAgua <= 0)
         return;
@@ -40,7 +40,7 @@ void Cacto::absorveAguaDoSolo(Posicao &pos) {
     aguaAcumCacto += absorverAgua;
 }
 
-void Cacto::absorveNutrientesDoSolo(Posicao &pos) {
+void Cacto::absorveNutrientesDoSolo(Posicao& pos) {
     int nutrientesSolo = pos.getNutrientes();
     if (nutrientesSolo <= 0)
         return;
@@ -55,7 +55,7 @@ void Cacto::absorveNutrientesDoSolo(Posicao &pos) {
 
 
 //Morte do cacto
-void Cacto::atualizaContadoresMorte(const Posicao &pos) {
+void Cacto::atualizaContadoresMorte(const Posicao& pos) {
     // água do solo demasiado alta
     if (pos.getAgua() > Settings::Cacto::morre_agua_solo_maior)
         ++contAguaSoloAlta;
@@ -80,7 +80,7 @@ bool Cacto::deveMorrer() const {
     return false;
 }
 
-void Cacto::morre(Posicao &pos) {
+void Cacto::morre(Posicao& pos) {
     // Ao morrer deixa no solo todos os nutrientes que absorveu
     pos.adicionaNutrientes(nutrientesAcumCacto);
     nutrientesAcumCacto = 0;
@@ -90,17 +90,17 @@ void Cacto::morre(Posicao &pos) {
 //Cacto a multiplicar
 bool Cacto::podeMultiplicar() const {
     return nutrientesAcumCacto > Settings::Cacto::multiplica_nutrientes_maior &&
-           aguaAcumCacto > Settings::Cacto::multiplica_agua_maior;
+        aguaAcumCacto > Settings::Cacto::multiplica_agua_maior;
 }
 
 //Aqui nasce um outro cacto
-bool Cacto::tentaMultiplicarParaVizinhoLivre(Jardim &jardim, int linha, int coluna) {
+bool Cacto::tentaMultiplicarParaVizinhoLivre(Jardim& jardim, int linha, int coluna) {
     int linhas = jardim.getLinhas();
     int colunas = jardim.getColunas();
 
     // Posições que ele pode assumir
-    int direcaoLinha[8] = {-1, -1, -1, 0, 0, 1, 1, 1};
-    int direcaoColuna[8] = {-1, 0, 1, -1, 1, -1, 0, 1};
+    int direcaoLinha[8] = { -1, -1, -1, 0, 0, 1, 1, 1 };
+    int direcaoColuna[8] = { -1, 0, 1, -1, 1, -1, 0, 1 };
 
     for (int i = 0; i < 8; ++i) {
         int nlinha = linha + direcaoLinha[i];
@@ -109,7 +109,7 @@ bool Cacto::tentaMultiplicarParaVizinhoLivre(Jardim &jardim, int linha, int colu
         if (nlinha < 0 || nlinha >= linhas || ncoluna < 0 || ncoluna >= colunas)
             continue;
 
-        Posicao &vizinha = jardim.getPosicao(nlinha, ncoluna);
+        Posicao& vizinha = jardim.getPosicao(nlinha, ncoluna);
         if (!vizinha.temPlanta()) {
             // dividir reservas com o "filho"
             int aguaFilho = aguaAcumCacto / 2;
@@ -118,8 +118,8 @@ bool Cacto::tentaMultiplicarParaVizinhoLivre(Jardim &jardim, int linha, int colu
             aguaAcumCacto = aguaAcumCacto - aguaFilho;
             nutrientesAcumCacto = nutrientesAcumCacto - nutrientesFilho;
 
-            Cacto *novo = new Cacto(nutrientesFilho, aguaFilho);
-            vizinha.setPlanta(novo);
+            auto novo = std::make_unique<Cacto>(nutrientesFilho, aguaFilho);
+            vizinha.setPlanta(std::move(novo));
 
             return true;
         }
@@ -129,11 +129,11 @@ bool Cacto::tentaMultiplicarParaVizinhoLivre(Jardim &jardim, int linha, int colu
 }
 
 // Atualização para cada instante quando avança um instante essa função é chamada.
-void Cacto::atualiza(Jardim &jardim, int linha, int coluna) {
+void Cacto::atualiza(Jardim& jardim, int linha, int coluna) {
     if (morta)
         return;
 
-    Posicao &pos = jardim.getPosicao(linha, coluna); //Obtém a posição do cacto
+    Posicao& pos = jardim.getPosicao(linha, coluna); //Obtém a posição do cacto
 
     //Absorver do solo
     absorveAguaDoSolo(pos); //absorve a água da posição em questão
@@ -158,3 +158,4 @@ void Cacto::atualiza(Jardim &jardim, int linha, int coluna) {
          */
     }
 }
+

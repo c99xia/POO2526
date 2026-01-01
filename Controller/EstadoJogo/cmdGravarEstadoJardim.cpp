@@ -1,16 +1,16 @@
 #include "cmdGravarEstadoJardim.h"
 
-void cmdGravarEstadoJardim::executa(Simulador &simulador) {
-    simulador.gravarEstadoJardim (this->nome);
+void cmdGravarEstadoJardim::executa(Simulador& simulador) {
+    simulador.gravarEstadoJardim(this->nomeF);
 }
 
-cmdGravarEstadoJardim::cmdGravarEstadoJardim(const std::string &nome):
-    nome(nome)
+cmdGravarEstadoJardim::cmdGravarEstadoJardim(const std::string& nome) :
+    nomeF(nome)
 {
 
 }
 
-Comando *cmdGravarEstadoJardim::criar (std::istringstream &iss) {
+Comando* cmdGravarEstadoJardim::criar(std::istringstream& iss) {
     std::cout << "Comando grava" << std::endl;
     std::string nome;
     if (iss >> nome) {
