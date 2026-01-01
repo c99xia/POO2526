@@ -13,6 +13,12 @@ void Tempo::reset() {
     instanteAtual = 0;
 }
 
+void Tempo::setInstante(int valor) {
+    if (valor >= 0) {
+        instanteAtual = valor;
+    }
+}
+
 void Tempo::avancaUm() {
     ++instanteAtual;
 }
