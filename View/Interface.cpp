@@ -44,11 +44,6 @@ void Interface::mostraJardim(const Jardim &jardim, const Jardineiro &jardineiro)
             else if (pos.getFerramenta() != nullptr) {
                 ch = pos.getFerramenta()->getChar();
             }
-            else {
-                ch = ' '; // vazio
-            }
-
-
 
             std::cout << ch << " ";
         }
