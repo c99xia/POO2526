@@ -5,13 +5,10 @@ void cmdLargarFerramenta::executa(Simulador& simulador)
 }
 
 Comando* cmdLargarFerramenta::criar(std::istringstream& iss) {
-    std::cout << "Comando larga" << std::endl;
     std::string invalido;
-    if (!(iss >> invalido)) {
-        std::cout << "A construir o comando cmdLargarFerramenta" << std::endl;
-        return new cmdLargarFerramenta();
+    if (iss >> invalido) {
+        std::cout << "Erro: comando 'larga' nao aceita argumentos." << std::endl;
+        return nullptr;
     }
-    std::cout << "comando incorreto'" << std::endl;
-    return nullptr;
-
+    return new cmdLargarFerramenta();
 }

@@ -6,12 +6,10 @@ void cmdMoveEsquerda::executa(Simulador& simulador) {
 }
 
 Comando* cmdMoveEsquerda::criar(std::istringstream& iss) {
-    std::cout << "Comando e" << std::endl;
     std::string invalido;
-    if (!(iss >> invalido)) {
-        std::cout << "A construir o comando cmdMoveEsquerda" << std::endl;
-        return new cmdMoveEsquerda();
+    if (iss >> invalido) {
+        std::cout << "Erro: comando 'e' nao aceita argumentos." << std::endl;
+        return nullptr;
     }
-    std::cout << "comando incorreto'" << std::endl;
-    return nullptr;
+    return new cmdMoveEsquerda();
 }

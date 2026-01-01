@@ -4,12 +4,10 @@ void cmdMoveDireita::executa(Simulador& simulador) {
 }
 
 Comando* cmdMoveDireita::criar(std::istringstream& iss) {
-    std::cout << "Comando d" << std::endl;
     std::string invalido;
-    if (!(iss >> invalido)) {
-        std::cout << "A construir o comando cmdMoveDireita" << std::endl;
-        return new cmdMoveDireita();
+    if (iss >> invalido) {
+        std::cout << "Erro: comando 'd' nao aceita argumentos." << std::endl;
+        return nullptr;
     }
-    std::cout << "comando incorreto'" << std::endl;
-    return nullptr;
+    return new cmdMoveDireita();
 }

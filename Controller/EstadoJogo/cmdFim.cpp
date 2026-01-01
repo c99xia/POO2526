@@ -6,12 +6,10 @@ void cmdFim::executa(Simulador& simulador) {
 }
 
 Comando* cmdFim::criar(std::istringstream& iss) {
-    std::cout << "Comando fim" << std::endl;
     std::string invalido;
-    if (!(iss >> invalido)) {
-        std::cout << "A construir o comando cmdFim" << std::endl;
-        return new cmdFim();
+    if (iss >> invalido) {
+        std::cout << "Erro: comando 'fim' nao aceita argumentos." << std::endl;
+        return nullptr;
     }
-    std::cout << "comando incorreto'" << std::endl;
-    return nullptr;
+    return new cmdFim();
 }

@@ -31,101 +31,120 @@
 #include "Movimento/cmdMoveEsquerda.h"
 #include "Movimento/cmdSaiJardineiro.h"
 
-Comando* ProcessaCMD::processa(std::string& inputUtilizador) {
+Comando* ProcessaCMD::processa(std::string& inputUtilizador)
+{
     std::istringstream iss(inputUtilizador);
     std::string cmd;
 
-    if (!(iss >> cmd)) {
-        std::cout << "Utilizador so deu enter" << std::endl;
-        return nullptr;
+    if (!(iss >> cmd))
+    {
+        return nullptr; // Linha vazia
     }
 
     // Comandos para o tempo simulado
-    if (cmd == "avanca") {
+    if (cmd == "avanca")
+    {
         return cmdAvancaInstante::criar(iss);
     }
 
-    // Comandos para listar informa  o
-    else if (cmd == "lplantas") {
+    // Comandos para listar informação
+    else if (cmd == "lplantas")
+    {
         return cmdListarPlantasExistentesNoJardim::criar(iss);
     }
-    else if (cmd == "lplanta") {
+    else if (cmd == "lplanta")
+    {
         return cmdListarPropriedadesPlantaPosicao::criar(iss);
     }
-    else if (cmd == "larea") {
+    else if (cmd == "larea")
+    {
         return cmdListarArea::criar(iss);
     }
-    else if (cmd == "lsolo") {
+    else if (cmd == "lsolo")
+    {
         return cmdListarCertaArea::criar(iss);
     }
-    else if (cmd == "lferr") {
+    else if (cmd == "lferr")
+    {
         return cmdListarFerramentas::criar(iss);
     }
 
-    // Comandos de a  o
-    else if (cmd == "colhe") {
+    // Comandos de ação
+    else if (cmd == "colhe")
+    {
         return cmdColherPlanta::criar(iss);
     }
-    else if (cmd == "planta") {
+    else if (cmd == "planta")
+    {
         return cmdPlantar::criar(iss);
     }
-    else if (cmd == "larga") {
+    else if (cmd == "larga")
+    {
         return cmdLargarFerramenta::criar(iss);
     }
-    else if (cmd == "pega") {
+    else if (cmd == "pega")
+    {
         return cmdPegarFerramenta::criar(iss);
     }
-    else if (cmd == "compra") {
+    else if (cmd == "compra")
+    {
         return cmdComprarFerramenta::criar(iss);
     }
 
     // Comandos de movimento
-    else if (cmd == "e") {
+    else if (cmd == "e")
+    {
         return cmdMoveEsquerda::criar(iss);
     }
-    else if (cmd == "d") {
+    else if (cmd == "d")
+    {
         return cmdMoveDireita::criar(iss);
     }
-    else if (cmd == "c") {
+    else if (cmd == "c")
+    {
         return cmdMoveCima::criar(iss);
     }
-    else if (cmd == "b") {
+    else if (cmd == "b")
+    {
         return cmdMoveBaixo::criar(iss);
     }
-    else if (cmd == "entra") {
+    else if (cmd == "entra")
+    {
         return cmdEntraJardineiro::criar(iss);
     }
-    else if (cmd == "sai") {
+    else if (cmd == "sai")
+    {
         return cmdSaiJardineiro::criar(iss);
     }
 
     // Estado do jogo
-    else if (cmd == "jardim") {
+    else if (cmd == "jardim")
+    {
         return cmdCriarJardim::criar(iss);
     }
-    else if (cmd == "grava") {
+    else if (cmd == "grava")
+    {
         return cmdGravarEstadoJardim::criar(iss);
     }
-    else if (cmd == "recupera") {
+    else if (cmd == "recupera")
+    {
         return cmdRecuperarEstadoJardim::criar(iss);
     }
-    else if (cmd == "apaga") {
+    else if (cmd == "apaga")
+    {
         return cmdApagarEstadoJardim::criar(iss);
     }
-    else if (cmd == "executa") {
+    else if (cmd == "executa")
+    {
         return cmdExecutaCmdTeste::criar(iss);
     }
 
     // Fim
-    else if (cmd == "fim") {
+    else if (cmd == "fim")
+    {
         return cmdFim::criar(iss);
     }
 
     std::cout << "Comando desconhecido: " << cmd << std::endl;
     return nullptr;
 }
-
-
-
-
-

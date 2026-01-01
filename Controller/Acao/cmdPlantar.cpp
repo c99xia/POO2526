@@ -10,36 +10,35 @@ cmdPlantar::cmdPlantar(int linha, int coluna, char tipo_planta) :
 }
 
 Comando* cmdPlantar::criar(std::istringstream& iss) {
-    std::cout << "Comando planta" << std::endl;
     std::string posicao;
-    if (iss >> posicao) {
-        std::cout << "posicao lido" << std::endl;
-        if (posicao.length() == 2 && islower(posicao[0]) && islower(posicao[1])) {
-            std::cout << "posicao valida" << std::endl;
-
-            char tipoPlanta;
-            if (iss >> tipoPlanta) {
-                if (tipoPlanta == 'c' || tipoPlanta == 'r' || tipoPlanta == 'e' || tipoPlanta == 'x') {
-                    std::string invalido;
-                    if (!(iss >> invalido)) {
-                        int linha = posicao[0] - 'a';
-                        int coluna = posicao[1] - 'a';
-
-                        std::cout << "A construir o comando cmdPlantar" << std::endl;
-                        return new cmdPlantar(linha, coluna, tipoPlanta);
-                    }
-                    std::cout << "Contem dados invalidos" << std::endl;
-                    return nullptr;
-                }
-                std::cout << "Nao existe esse tipo de planta" << std::endl;
-                return nullptr;
-            }
-            std::cout << "Nao foi lido tipoPlanta" << std::endl;
-            return nullptr;
-        }
-        std::cout << "posicao invalida" << std::endl;
+    if (!(iss >> posicao)) {
+        std::cout << "Erro: planta requer posicao e tipo (ex: aa c)." << std::endl;
         return nullptr;
     }
-    std::cout << "comando incorreto'" << std::endl;
-    return nullptr;
+
+    if (posicao.length() != 2 || !islower(posicao[0]) || !islower(posicao[1])) {
+        std::cout << "Erro: posicao invalida (use 2 letras minusculas)." << std::endl;
+        return nullptr;
+    }
+
+    char tipoPlanta;
+    if (!(iss >> tipoPlanta)) {
+        std::cout << "Erro: tipo de planta nao especificado (c/r/e/x)." << std::endl;
+        return nullptr;
+    }
+
+    if (tipoPlanta != 'c' && tipoPlanta != 'r' && tipoPlanta != 'e' && tipoPlanta != 'x') {
+        std::cout << "Erro: tipo invalido (use c, r, e ou x)." << std::endl;
+        return nullptr;
+    }
+
+    std::string invalido;
+    if (iss >> invalido) {
+        std::cout << "Erro: argumentos extra invalidos." << std::endl;
+        return nullptr;
+    }
+
+    int linha = posicao[0] - 'a';
+    int coluna = posicao[1] - 'a';
+    return new cmdPlantar(linha, coluna, tipoPlanta);
 }

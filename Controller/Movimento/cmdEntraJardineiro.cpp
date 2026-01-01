@@ -11,26 +11,24 @@ cmdEntraJardineiro::cmdEntraJardineiro(int linha, int coluna) :
 }
 
 Comando* cmdEntraJardineiro::criar(std::istringstream& iss) {
-    std::cout << "Comando entra" << std::endl;
     std::string posicao;
-    if (iss >> posicao) {
-        std::cout << "posicao lido" << std::endl;
-        if (posicao.length() == 2 && islower(posicao[0]) && islower(posicao[1])) {
-            int linha = posicao[0] - 'a';
-            int coluna = posicao[1] - 'a';
-            std::cout << "Posicao valida" << std::endl;
-
-            std::string invalido;
-            if (!(iss >> invalido)) {
-                std::cout << "A construir o comando cmdEntraJardineiro" << std::endl;
-                return new cmdEntraJardineiro(linha, coluna);
-            }
-            std::cout << "Contem dados invalidos" << std::endl;
-        }
-        std::cout << "numero de caracteres invalido ou caracteres nao estao em minusculas" << std::endl;
+    if (!(iss >> posicao)) {
+        std::cout << "Erro: entra requer posicao (ex: aa)." << std::endl;
         return nullptr;
     }
-    std::cout << "comando incorreto'" << std::endl;
-    return nullptr;
-}
 
+    if (posicao.length() != 2 || !islower(posicao[0]) || !islower(posicao[1])) {
+        std::cout << "Erro: posicao invalida (use 2 letras minusculas)." << std::endl;
+        return nullptr;
+    }
+
+    std::string invalido;
+    if (iss >> invalido) {
+        std::cout << "Erro: argumentos extra invalidos." << std::endl;
+        return nullptr;
+    }
+
+    int linha = posicao[0] - 'a';
+    int coluna = posicao[1] - 'a';
+    return new cmdEntraJardineiro(linha, coluna);
+}

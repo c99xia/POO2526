@@ -5,12 +5,10 @@ void cmdListarArea::executa(Simulador& simulador) {
 }
 
 Comando* cmdListarArea::criar(std::istringstream& iss) {
-    std::cout << "Comando larea" << std::endl;
     std::string invalido;
-    if (!(iss >> invalido)) {
-        std::cout << "A construir o comando cmdListarArea" << std::endl;
-        return new cmdListarArea();
+    if (iss >> invalido) {
+        std::cout << "Erro: comando 'larea' nao aceita argumentos." << std::endl;
+        return nullptr;
     }
-    std::cout << "comando incorreto'" << std::endl;
-    return nullptr;
+    return new cmdListarArea();
 }

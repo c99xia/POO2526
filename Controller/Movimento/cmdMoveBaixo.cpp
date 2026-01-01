@@ -5,12 +5,10 @@ void cmdMoveBaixo::executa(Simulador& simulador) {
 }
 
 Comando* cmdMoveBaixo::criar(std::istringstream& iss) {
-    std::cout << "Comando b" << std::endl;
     std::string invalido;
-    if (!(iss >> invalido)) {
-        std::cout << "A construir o comando cmdMoveBaixo" << std::endl;
-        return new cmdMoveBaixo();
+    if (iss >> invalido) {
+        std::cout << "Erro: comando 'b' nao aceita argumentos." << std::endl;
+        return nullptr;
     }
-    std::cout << "comando incorreto'" << std::endl;
-    return nullptr;
+    return new cmdMoveBaixo();
 }

@@ -4,12 +4,10 @@ void cmdSaiJardineiro::executa(Simulador& simulador) {
 }
 
 Comando* cmdSaiJardineiro::criar(std::istringstream& iss) {
-    std::cout << "Comando sai" << std::endl;
     std::string invalido;
-    if (!(iss >> invalido)) {
-        std::cout << "A construir o comando cmdSaiJardineiro" << std::endl;
-        return new cmdSaiJardineiro();
+    if (iss >> invalido) {
+        std::cout << "Erro: comando 'sai' nao aceita argumentos." << std::endl;
+        return nullptr;
     }
-    std::cout << "comando incorreto'" << std::endl;
-    return nullptr;
+    return new cmdSaiJardineiro();
 }
