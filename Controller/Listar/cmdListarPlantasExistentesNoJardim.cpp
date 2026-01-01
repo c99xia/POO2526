@@ -5,12 +5,10 @@ void cmdListarPlantasExistentesNoJardim::executa(Simulador& simulador) {
 }
 
 Comando* cmdListarPlantasExistentesNoJardim::criar(std::istringstream& iss) {
-    std::cout << "Comando lplantas" << std::endl;
     std::string invalido;
-    if (!(iss >> invalido)) {
-        std::cout << "A construir o comando cmdListarPlantasExistentesNoJardim" << std::endl;
-        return new cmdListarPlantasExistentesNoJardim();
+    if (iss >> invalido) {
+        std::cout << "Erro: comando 'lplantas' nao aceita argumentos." << std::endl;
+        return nullptr;
     }
-    std::cout << "comando incorreto'" << std::endl;
-    return nullptr;
+    return new cmdListarPlantasExistentesNoJardim();
 }
