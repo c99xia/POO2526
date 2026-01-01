@@ -9,6 +9,7 @@
 class cmdListarFerramentas : public Comando {
 public:
     cmdListarFerramentas() = default;
+    std::string nome() const override { return "lferr"; }
 
     void executa(Simulador &simulador) override;
     static Comando* criar(std::istringstream &iss);

@@ -12,7 +12,7 @@ class cmdAvancaInstante : public Comando {
 public:
     cmdAvancaInstante(int instante);
     void executa(Simulador &sim) override;
-
+    std::string nome() const override { return "planta"; }
     static Comando* criar(std::istringstream &iss);
 };
 #endif //PROJETO_CMDAVANCAINSTANTE_H

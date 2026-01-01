@@ -12,6 +12,7 @@ class cmdPegarFerramenta : public Comando {
 
 public:
     cmdPegarFerramenta(int numeroSerie);
+    std::string nome() const override { return "pega"; }
 
     void executa(Simulador &simulador) override;;
 

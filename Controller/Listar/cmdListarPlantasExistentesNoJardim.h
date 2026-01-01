@@ -9,8 +9,8 @@
 class cmdListarPlantasExistentesNoJardim : public Comando {
 public:
     cmdListarPlantasExistentesNoJardim() = default;
+    std::string nome() const override { return "lplantas"; }
 
-public:
     void executa(Simulador &simulador) override;
     static Comando* criar(std::istringstream &iss);
 };

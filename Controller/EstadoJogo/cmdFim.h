@@ -9,7 +9,7 @@
 class cmdFim : public Comando {
 public:
     cmdFim()=default;
-
+    std::string nome() const override { return "fim"; }
     void executa(Simulador &simulador) override;
     static Comando* criar(std::istringstream &iss);
 };

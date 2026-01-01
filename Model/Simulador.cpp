@@ -29,8 +29,9 @@ const static char *belezaToString(Beleza b) {
 }
 
 Simulador::Simulador()
-    : jogoAtivo(true) {
+    : jogoAtivo(true), jardimCriado(false) {
 }
+
 
 // Funções auxiliares que é afetado pelo tempo
 
@@ -108,8 +109,17 @@ void Simulador::avancaUmInstante() {
 // Estado Jardim
 
 void Simulador::criarJardim(int linha, int coluna) {
+    if (jardimCriado) {
+        std::cout << "O jardim ja foi criado e nao pode ser criado novamente.\n";
+        return;
+    }
+
     jardim.inicializar(linha, coluna);
+    jardimCriado = true;
+
+    std::cout << "Jardim criado com sucesso (" << linha << "x" << coluna << ").\n";
 }
+
 
 void Simulador::gravarEstadoJardim(const std::string &nome) {
     std::cout << "gravarEstadoJardim(\"" << nome << "\")\n";

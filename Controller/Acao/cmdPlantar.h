@@ -7,15 +7,17 @@
 #include "../../Model/Simulador.h"
 
 
-class cmdPlantar : public Comando {
+class cmdPlantar : public Comando
+{
     int linha, coluna;
     char tipo_planta;
 
 public:
     cmdPlantar(int linha, int coluna, char tipo_planta);
+    std::string nome() const override { return "planta"; }
 
-    void executa(Simulador &simulador) override;
+    void executa(Simulador& simulador) override;
 
-    static Comando* criar(std::istringstream &iss);
+    static Comando* criar(std::istringstream& iss);
 };
 #endif //PROJETO_CMDPLANTAR_H

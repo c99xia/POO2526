@@ -9,6 +9,7 @@
 class cmdMoveDireita : public Comando {
 public:
     cmdMoveDireita() = default;
+    std::string nome() const override { return "d"; }
 
     void executa(Simulador &simulador) override;
     static Comando* criar(std::istringstream &iss);

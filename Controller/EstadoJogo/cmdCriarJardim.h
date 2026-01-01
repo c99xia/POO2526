@@ -11,7 +11,7 @@ class cmdCriarJardim : public Comando {
 
 public:
     cmdCriarJardim(int linha, int coluna);
-
+    std::string nome() const override { return "jardim"; }
     void executa(Simulador &simulador) override;
     static Comando* criar(std::istringstream &iss);
 };

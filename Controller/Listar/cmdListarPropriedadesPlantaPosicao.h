@@ -10,6 +10,8 @@ class cmdListarPropriedadesPlantaPosicao : public Comando {
     int linha, coluna;
 
 public:
+    std::string nome() const override { return "lplanta"; }
+
     cmdListarPropriedadesPlantaPosicao(int linha, int coluna);
 
     void executa(Simulador &simulador) override;

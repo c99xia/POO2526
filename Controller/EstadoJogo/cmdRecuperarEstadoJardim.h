@@ -8,11 +8,11 @@
 
 
 class cmdRecuperarEstadoJardim : public Comando {
-    std::string nome;
+    std::string nomeF;
 
 public:
     cmdRecuperarEstadoJardim(const std::string& nome);
-
+    std::string nome() const override { return "recupera"; }
     void executa(Simulador &simulador) override;
     static Comando* criar(std::istringstream &iss);
 };

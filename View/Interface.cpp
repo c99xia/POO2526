@@ -32,19 +32,22 @@ void Interface::mostraJardim(const Jardim &jardim, const Jardineiro &jardineiro)
 
         for (int c = 0; c < colunas; ++c) {
             const Posicao &pos = jardim.getPosicao(l, c);
-            char ch = '.'; // vazio
+            char ch = ' '; // vazio
 
-            if (pos.getPlanta() != nullptr) {
+            // prioridade: jardineiro > planta > ferramenta > vazio
+            if (temJardineiro && l == jardineiroLinha && c == jardineiroColuna) {
+                ch = '*';
+            }
+            else if (pos.getPlanta() != nullptr) {
                 ch = pos.getPlanta()->getChar();
             }
-
-            if (pos.getFerramenta() != nullptr) {
+            else if (pos.getFerramenta() != nullptr) {
                 ch = pos.getFerramenta()->getChar();
             }
-
-            if (temJardineiro && l == jardineiroLinha && c == jardineiroColuna) {
-                ch = 'J';
+            else {
+                ch = ' '; // vazio
             }
+
 
 
             std::cout << ch << " ";

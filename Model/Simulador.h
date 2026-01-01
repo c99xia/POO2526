@@ -11,6 +11,7 @@
 class Simulador {
     Jardim jardim;  //O simulador tem um jardim, e tem um jardineiro e tem tempo
     //Quando tempo avança ele avisa o jardim
+    bool jardimCriado;
     Jardineiro jardineiro;
     Tempo tempo;
     bool jogoAtivo;

@@ -12,7 +12,7 @@ class cmdEntraJardineiro : public Comando {
 
 public:
     cmdEntraJardineiro(int linha, int coluna);
-
+    std::string nome() const override { return "entra"; }
     void executa(Simulador &simulador) override;
     static Comando* criar(std::istringstream &iss);
 };

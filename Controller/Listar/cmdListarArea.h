@@ -9,6 +9,7 @@
 class cmdListarArea : public Comando {
 public:
     cmdListarArea() = default;
+    std::string nome() const override { return "larea"; }
 
     void executa(Simulador &simulador) override;
     static Comando* criar(std::istringstream &iss);
