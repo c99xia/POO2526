@@ -13,6 +13,7 @@ public:
     Tempo();
 
     int getInstante() const;
+    void setInstante(int valor);
     void reset();
 
     void avancaUm();

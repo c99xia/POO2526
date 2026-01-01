@@ -19,8 +19,6 @@
 #include "../Utils/Random.h"
 #include "../Controller/ProcessaCMD.h"
 
-
-
 // Função auxiliar apenas visível aqui
 const static char* belezaToString(Beleza b) {
     switch (b) {
@@ -306,21 +304,22 @@ void Simulador::recuperarEstadoJardim(const std::string& nome) {
     }
 
     // Restaurar jardineiro
-    if (estado.jardineiroPresente) {
-        jardineiro.entrar(estado.jardineiroLinha, estado.jardineiroColuna);
-    } else {
-        // Se o jardineiro estava fora, garantir que está fora
-        if (jardineiro.estaPresente()) {
-            jardineiro.sair();
+        if (estado.jardineiroPresente) {
+            jardineiro.entrar(estado.jardineiroLinha, estado.jardineiroColuna);
+        } else {
+            // Se o jardineiro estava fora, garantir que está fora
+            if (jardineiro.estaPresente()) {
+                jardineiro.sair();
+            }
         }
+
+        // Restaurar instante
+        tempo.setInstante(estado.instanteAtual);
+
+        std::cout << "Estado do jardim '" << nome << "' recuperado.\n";
+        std::cout << "  Dimensao: " << estado.linhas << "x" << estado.colunas << "\n";
+        std::cout << "  Instante: " << tempo.getInstante() << "\n";
     }
-
-
-    // Por agora, apenas reportamos
-    std::cout << "Estado do jardim '" << nome << "' recuperado.\n";
-    std::cout << "  Dimensao: " << estado.linhas << "x" << estado.colunas << "\n";
-    std::cout << "  Instante original: " << estado.instanteAtual << "\n";
-}
 
 void Simulador::apagarEstadoJardim(const std::string& nome) {
     auto it = estadosGuardados.find(nome);
