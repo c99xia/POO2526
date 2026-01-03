@@ -9,7 +9,7 @@
 #include "../Model/Plantas/Cacto.h"
 #include "../Model/Plantas/Roseira.h"
 #include "../Model/Plantas/Daninha.h"
-#include "../Model/Plantas/M4rg4rid4.h"
+#include "../Model/Plantas/Floribela.h"
 #include "../Model/Beleza.h"
 #include "../Model/Ferramentas/Ferramenta.h"
 #include "../Model/Ferramentas/Adubo.h"
@@ -224,7 +224,8 @@ void Simulador::gravarEstadoJardim(const std::string& nome) {
             Planta* pl = pos.getPlanta();
             if (pl != nullptr && !pl->estaMorta()) {
                 ep.tipoPlanta = pl->getChar();
-            } else {
+            }
+            else {
                 ep.tipoPlanta = '\0';
             }
 
@@ -233,7 +234,8 @@ void Simulador::gravarEstadoJardim(const std::string& nome) {
             if (f != nullptr) {
                 ep.tipoFerramenta = f->getChar();
                 ep.ferramentaSerie = f->getNumeroSerie();
-            } else {
+            }
+            else {
                 ep.tipoFerramenta = '\0';
                 ep.ferramentaSerie = 0;
             }
@@ -280,7 +282,7 @@ void Simulador::recuperarEstadoJardim(const std::string& nome) {
                 case 'c': nova = std::make_unique<Cacto>(); break;
                 case 'r': nova = std::make_unique<Roseira>(); break;
                 case 'e': nova = std::make_unique<Daninha>(); break;
-                case 'x': nova = std::make_unique<M4rg4rid4>(); break;
+                case 'x': nova = std::make_unique<Floribela>(); break;
                 }
                 if (nova) {
                     pos.setPlanta(std::move(nova));
@@ -304,22 +306,23 @@ void Simulador::recuperarEstadoJardim(const std::string& nome) {
     }
 
     // Restaurar jardineiro
-        if (estado.jardineiroPresente) {
-            jardineiro.entrar(estado.jardineiroLinha, estado.jardineiroColuna);
-        } else {
-            // Se o jardineiro estava fora, garantir que está fora
-            if (jardineiro.estaPresente()) {
-                jardineiro.sair();
-            }
-        }
-
-        // Restaurar instante
-        tempo.setInstante(estado.instanteAtual);
-
-        std::cout << "Estado do jardim '" << nome << "' recuperado.\n";
-        std::cout << "  Dimensao: " << estado.linhas << "x" << estado.colunas << "\n";
-        std::cout << "  Instante: " << tempo.getInstante() << "\n";
+    if (estado.jardineiroPresente) {
+        jardineiro.entrar(estado.jardineiroLinha, estado.jardineiroColuna);
     }
+    else {
+        // Se o jardineiro estava fora, garantir que está fora
+        if (jardineiro.estaPresente()) {
+            jardineiro.sair();
+        }
+    }
+
+    // Restaurar instante
+    tempo.setInstante(estado.instanteAtual);
+
+    std::cout << "Estado do jardim '" << nome << "' recuperado.\n";
+    std::cout << "  Dimensao: " << estado.linhas << "x" << estado.colunas << "\n";
+    std::cout << "  Instante: " << tempo.getInstante() << "\n";
+}
 
 void Simulador::apagarEstadoJardim(const std::string& nome) {
     auto it = estadosGuardados.find(nome);
@@ -617,7 +620,7 @@ void Simulador::plantar(int linha, int coluna, char tipo) {
     case 'c': nova = std::make_unique<Cacto>(); break;
     case 'r': nova = std::make_unique<Roseira>(); break;
     case 'e': nova = std::make_unique<Daninha>(); break;
-    case 'x': nova = std::make_unique<M4rg4rid4>(); break;
+    case 'x': nova = std::make_unique<Floribela>(); break;
     default:
         std::cout << "Tipo de planta invalido.\n";
         return;

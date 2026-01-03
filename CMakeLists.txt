@@ -45,7 +45,6 @@ add_executable(POO2526 main.cpp
         Utils/Tempo.cpp
         Utils/Tempo.h
         Model/Plantas/Daninha.cpp
-        Model/Plantas/M4rg4rid4.cpp
         Model/Jardineiro.cpp
         Model/Ferramentas/Ferramenta.cpp
         Model/Ferramentas/Regador.h
@@ -55,4 +54,6 @@ add_executable(POO2526 main.cpp
         Model/Ferramentas/Tesoura.h
         Model/Ferramentas/Tesoura.cpp
         Model/Ferramentas/Trator.cpp
+        Model/Plantas/Floribela.cpp
+        Model/Plantas/Floribela.h
 )

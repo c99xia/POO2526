@@ -1,16 +1,17 @@
-#include "M4rg4rid4.h"
+#include "Floribela.h"
 #include "../Posicao.h"
-#include "../../Utils/Settings.h"
+#include "../Jardim.h"
 
-M4rg4rid4::M4rg4rid4()
+
+Floribela::Floribela()
     : Planta(Beleza::linda),   // Planta exótica é linda/bonita
-    nutrientesAcumM4rg4rid4(10),
-    aguaAcumM4rg4rid4(10),
+    nutrientesAcumFloribela(10),
+    aguaAcumFloribela(10),
     instantesVividos(0)
 {
 }
 
-void M4rg4rid4::purificarVizinhos(Jardim& jardim, int linha, int coluna) {
+void Floribela::purificarVizinhos(Jardim& jardim, int linha, int coluna) {
     int linhas = jardim.getLinhas();
     int colunas = jardim.getColunas();
 
@@ -39,7 +40,7 @@ void M4rg4rid4::purificarVizinhos(Jardim& jardim, int linha, int coluna) {
     }
 }
 
-void M4rg4rid4::atualiza(Jardim& jardim, int linha, int coluna) {
+void Floribela::atualiza(Jardim& jardim, int linha, int coluna) {
     if (morta)
         return;
 
@@ -53,7 +54,7 @@ void M4rg4rid4::atualiza(Jardim& jardim, int linha, int coluna) {
         int absorver = 2; // absorve pouco
         if (absorver > aguaSolo) absorver = aguaSolo;
         pos.setAgua(aguaSolo - absorver);
-        aguaAcumM4rg4rid4 += absorver;
+        aguaAcumFloribela += absorver;
     }
 
     int nutSolo = pos.getNutrientes();
@@ -61,13 +62,13 @@ void M4rg4rid4::atualiza(Jardim& jardim, int linha, int coluna) {
         int absorver = 2; // absorve pouco
         if (absorver > nutSolo) absorver = nutSolo;
         pos.setNutrientes(nutSolo - absorver);
-        nutrientesAcumM4rg4rid4 += absorver;
+        nutrientesAcumFloribela += absorver;
     }
 
     // 2) Verificar morte: morre se ficar sem água ou nutrientes internos
-    if (aguaAcumM4rg4rid4 <= 0 || nutrientesAcumM4rg4rid4 <= 0) {
+    if (aguaAcumFloribela <= 0 || nutrientesAcumFloribela <= 0) {
         // Ao morrer devolve metade dos nutrientes ao solo
-        pos.adicionaNutrientes(nutrientesAcumM4rg4rid4 / 2);
+        pos.adicionaNutrientes(nutrientesAcumFloribela / 2);
         morta = true;
         return;
     }
@@ -76,7 +77,6 @@ void M4rg4rid4::atualiza(Jardim& jardim, int linha, int coluna) {
     purificarVizinhos(jardim, linha, coluna);
 
     // 4) Perda natural de recursos (gasta energia a purificar)
-    aguaAcumM4rg4rid4 -= 1;
-    nutrientesAcumM4rg4rid4 -= 1;
+    aguaAcumFloribela -= 1;
+    nutrientesAcumFloribela -= 1;
 }
-
